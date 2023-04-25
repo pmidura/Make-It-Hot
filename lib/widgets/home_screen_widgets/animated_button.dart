@@ -2,7 +2,7 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:make_it_hot/screens/scratches_screen.dart';
 
-Widget animatedButton(String categoryName) => OpenContainer(
+Widget animatedButton(String categoryName, String tableName) => OpenContainer(
   closedColor: Colors.transparent,
   closedElevation: 0,
   middleColor: Colors.transparent,
@@ -10,7 +10,7 @@ Widget animatedButton(String categoryName) => OpenContainer(
   openElevation: 0,
   transitionDuration: const Duration(milliseconds: 500),
   transitionType: ContainerTransitionType.fadeThrough,
-  openBuilder: (_, __) => const ScratchesScreen(),
+  openBuilder: (_, __) => ScratchesScreen(tableName: tableName),
   closedBuilder: (_, __) => Container(
     padding: const EdgeInsets.all(20.0),
     margin: const EdgeInsets.symmetric(horizontal: 25.0),

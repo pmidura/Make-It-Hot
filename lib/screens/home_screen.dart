@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
         child: ListView(
           shrinkWrap: true,
           children: [
-            animatedButton("Man On Top"),
+            animatedButton("Man On Top", "ManOnTop"),
           ],
         ),
       ),
