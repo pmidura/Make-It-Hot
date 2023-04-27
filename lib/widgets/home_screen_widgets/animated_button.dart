@@ -1,8 +1,9 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
-import 'package:make_it_hot/screens/scratches_screen.dart';
 
-Widget animatedButton(String categoryName, String tableName) => OpenContainer(
+import 'scratch_positions.dart';
+
+Widget animatedButton(BuildContext context) => OpenContainer(
   closedColor: Colors.transparent,
   closedElevation: 0,
   middleColor: Colors.transparent,
@@ -10,7 +11,7 @@ Widget animatedButton(String categoryName, String tableName) => OpenContainer(
   openElevation: 0,
   transitionDuration: const Duration(milliseconds: 500),
   transitionType: ContainerTransitionType.fadeThrough,
-  openBuilder: (_, __) => ScratchesScreen(tableName: tableName),
+  openBuilder: (_, __) => const ScratchPositions(),
   closedBuilder: (_, __) => Container(
     padding: const EdgeInsets.all(20.0),
     margin: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -25,10 +26,10 @@ Widget animatedButton(String categoryName, String tableName) => OpenContainer(
       ),
       borderRadius: BorderRadius.circular(10.0),
     ),
-    child: Center(
+    child: const Center(
       child: Text(
-        categoryName,
-        style: const TextStyle(
+        "Man On Top",
+        style: TextStyle(
           color: Colors.black,
           fontWeight: FontWeight.bold,
           fontSize: 18.0,

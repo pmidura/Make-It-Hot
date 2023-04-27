@@ -4,7 +4,9 @@ import '../styles/theme.dart' as style;
 import '../widgets/home_screen_widgets/animated_button.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -16,7 +18,7 @@ class HomeScreen extends StatelessWidget {
         child: ListView(
           shrinkWrap: true,
           children: [
-            animatedButton("Man On Top", "ManOnTop"),
+            animatedButton(context),
           ],
         ),
       ),
