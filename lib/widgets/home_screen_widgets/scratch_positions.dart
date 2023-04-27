@@ -12,8 +12,13 @@ import '../info_widgets/loading_widget.dart';
 import 'empty_positions.dart';
 
 class ScratchPositions extends StatelessWidget {
+  final String jsonFilename;
+  final String tableName;
+
   const ScratchPositions({
     super.key,
+    required this.jsonFilename,
+    required this.tableName,
   });
 
   @override
@@ -21,9 +26,10 @@ class ScratchPositions extends StatelessWidget {
     create: (_) => PositionBloc(
       database: context.read<DatabaseCubit>().database!,
       repo: PositionRepo(),
+      jsonFilename: jsonFilename,
     )..add(
       TableNameEvent(
-        tableName: "ManOnTop",
+        tableName: tableName,
       ),
     ),
     child: BlocConsumer<PositionBloc, PositionState>(

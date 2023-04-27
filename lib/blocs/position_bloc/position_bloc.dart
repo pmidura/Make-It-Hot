@@ -14,13 +14,14 @@ part 'position_state.dart';
 class PositionBloc extends Bloc<PositionEvent, PositionState> {
   final PositionRepo repo;
   final Database database;
+  final String jsonFilename;
 
-  PositionBloc({required this.database, required this.repo}) : super(LoadingState()) {
+  PositionBloc({required this.database, required this.repo, required this.jsonFilename}) : super(LoadingState()) {
     on<TableNameEvent>((event, emit) async {
       emit(LoadingState());
 
       try {
-        final response = await rootBundle.loadString("assets/json_data/man_on_top.json");
+        final response = await rootBundle.loadString(jsonFilename);
         final data = await json.decode(response)['positions'] as List;
 
         final positionsData = await repo.getAllPositions(database: database, tableName: event.tableName);
