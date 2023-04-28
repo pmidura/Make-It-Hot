@@ -14,16 +14,6 @@ Future<void> main() async {
     ),
   );
 
-  // Directory docsDirectory = await getApplicationDocumentsDirectory();
-  // var exists = databaseExists(join(docsDirectory.path, "JSONData.db"));
-
-  // if (await exists == false) {
-  //   await PositionsProvider().getPosition("assets/json_data/man_on_top.json", "ManOnTop");
-  //   print("DB not exists... adding positions from JSON file");
-  // } else {
-  //   print("DB exists... positions already exists...");
-  // }
-
   runApp(const MyApp());
 }
 

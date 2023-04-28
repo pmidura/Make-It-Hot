@@ -42,6 +42,12 @@ class ScratchPositions extends StatelessWidget {
         } else if (state is LoadedState) {
           List<Position> positions = state.positions;
 
+          final List<GlobalObjectKey<ScratcherState>> scratchKeyList =
+            List.generate(
+              positions.length,
+              (index) => GlobalObjectKey<ScratcherState>(index),
+            );
+
           return Container(
             width: double.infinity,
             height: double.infinity,
@@ -56,12 +62,20 @@ class ScratchPositions extends StatelessWidget {
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: positions[index].isRevealed == "false" ? Scratcher(
+                    key: scratchKeyList[index],
                     color: Colors.deepPurple.shade100,
                     brushSize: 30,
                     accuracy: ScratchAccuracy.low,
                     threshold: 70,
-                    onThreshold: () async {
-                      // await DBProvider.db.updatePosition(snapshot.data![index].title, "true", tableName);
+                    onThreshold: () {
+                      scratchKeyList[index].currentState?.reveal();
+
+                      PositionRepo().updatePosition(
+                        database: context.read<DatabaseCubit>().database!,
+                        title: positions[index].title,
+                        isRevealed: "true",
+                        tableName: tableName,
+                      );
 
                       // if (context.mounted) {
                       //   Navigator.push(

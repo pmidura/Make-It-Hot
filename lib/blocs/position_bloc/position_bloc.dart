@@ -24,16 +24,18 @@ class PositionBloc extends Bloc<PositionEvent, PositionState> {
         final response = await rootBundle.loadString(jsonFilename);
         final data = await json.decode(response)['positions'] as List;
 
-        final positionsData = await repo.getAllPositions(database: database, tableName: event.tableName);
+        List<Position> positionsData = await repo.getAllPositions(database: database, tableName: event.tableName);
 
         if (positionsData.isEmpty) {
-          data.map((e) => repo.addPosition(
-            database: database,
-            position: Position.fromJson(e),
-            tableName: event.tableName,
-          )).toList();
+          for (final position in data) {
+            await repo.addPosition(
+              database: database,
+              position: Position.fromJson(position),
+              tableName: event.tableName,
+            );
+          }
+          positionsData = await repo.getAllPositions(database: database, tableName: event.tableName);
         }
-
         emit(LoadedState(positions: positionsData));
       } catch (ex) {
         emit(ErrorState(error: ex.toString()));

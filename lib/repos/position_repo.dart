@@ -3,13 +3,11 @@ import 'package:sqflite/sqflite.dart';
 import '../models/position.dart';
 
 class PositionRepo {
-    Future<dynamic> addPosition({
-      required Database database,
-      required Position position,
-      required String tableName,
-    }) async {
-    print("Adding position to: $tableName");
-
+  Future<dynamic> addPosition({
+    required Database database,
+    required Position position,
+    required String tableName,
+  }) async {
     return await database.insert(
       tableName,
       position.toJson(),
