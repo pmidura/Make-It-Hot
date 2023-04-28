@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../styles/theme.dart' as style;
-import '../gradient_progress_widget/gradient_progess.dart';
+import '../gradient_progress_widget/gradient_progress.dart';
 
 Widget loadingWidget() => Scaffold(
   body: Container(
