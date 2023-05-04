@@ -6,6 +6,7 @@ import '../../blocs/database_cubit/database_cubit.dart';
 import '../../blocs/position_bloc/position_bloc.dart';
 import '../../models/position.dart';
 import '../../repos/position_repo.dart';
+import '../../screens/position_details_screen.dart';
 import '../../styles/theme.dart' as style;
 import '../info_widgets/error_widget.dart';
 import '../info_widgets/loading_widget.dart';
@@ -67,10 +68,10 @@ class ScratchPositions extends StatelessWidget {
                     brushSize: 30,
                     accuracy: ScratchAccuracy.low,
                     threshold: 70,
-                    onThreshold: () {
+                    onThreshold: () async {
                       scratchKeyList[index].currentState?.reveal();
 
-                      PositionRepo().updatePosition(
+                      await PositionRepo().updatePosition(
                         database: context.read<DatabaseCubit>().database!,
                         title: positions[index].title,
                         isRevealed: "true",
@@ -82,10 +83,10 @@ class ScratchPositions extends StatelessWidget {
                       //     context,
                       //     MaterialPageRoute(
                       //       builder: (_) => PositionDetailsScreen(
-                      //         positionTitle: snapshot.data![index].title,
-                      //         positionContent: snapshot.data![index].content,
-                      //         positionImage: snapshot.data![index].image,
-                      //         positionCategory: snapshot.data![index].category,
+                      //         positionTitle: positions[index].title,
+                      //         positionContent: positions[index].content,
+                      //         positionImage: positions[index].image,
+                      //         positionCategory: positions[index].category,
                       //       ),
                       //     ),
                       //   );

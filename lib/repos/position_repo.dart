@@ -8,6 +8,8 @@ class PositionRepo {
     required Position position,
     required String tableName,
   }) async {
+    print("Adding position to: $tableName");
+
     return await database.insert(
       tableName,
       position.toJson(),
@@ -37,8 +39,41 @@ class PositionRepo {
     List<Position> positions =
       res.isNotEmpty ? res.map((pos) => Position.fromJson(pos)).toList() : [];
 
-    print("Printing all positions in: $tableName");
+    print("Getting all positions in: $tableName");
 
     return positions;
+  }
+
+  Future<int?> getNumberOfPositionsFromTable({
+    required Database database,
+    required String tableName,
+  }) async {
+    final res = Sqflite.firstIntValue(await database.rawQuery("SELECT COUNT(*) FROM '$tableName'"));
+    
+    print("Number of positions in $tableName: $res");
+    
+    return res;
+  }
+
+  Future<int?> getNumberOfRevealedPositionsFromTable({
+    required Database database,
+    required String tableName,
+  }) async {
+    final res = Sqflite.firstIntValue(await database.rawQuery("SELECT COUNT(*) FROM '$tableName' WHERE isRevealed='true'"));
+
+    print("Number of revealed positions in $tableName: $res");
+
+    return res;
+  }
+
+  Future<int?> getCountPositionsFromAllTables({
+    required Database database,
+  }) async {
+    final motRes = Sqflite.firstIntValue(await database.rawQuery("SELECT COUNT(*) FROM ManOnTop"));
+    final wotRes = Sqflite.firstIntValue(await database.rawQuery("SELECT COUNT(*) FROM WomanOnTop"));
+
+    final res = motRes! + wotRes!;
+
+    return res;
   }
 }
