@@ -8,8 +8,10 @@ class PositionEvent extends Equatable {
 class TableNameEvent extends PositionEvent {
   final String tableName;
 
-  TableNameEvent({required this.tableName});
+  TableNameEvent({
+    required this.tableName,
+  });
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [tableName];
 }
