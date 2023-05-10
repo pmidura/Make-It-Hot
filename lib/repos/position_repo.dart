@@ -42,6 +42,13 @@ class PositionRepo {
     return positions;
   }
 
+  Future<List<Position>> getRandomPosition({
+    required Database database,
+  }) async {
+    final randPos = await database.rawQuery("SELECT * FROM ManOnTop WHERE isRevealed='false' ORDER BY RANDOM() LIMIT 1");
+    return randPos.map((pos) => Position.fromJson(pos)).toList();
+  }
+
   Future<int?> getNumberOfPositionsFromTable({
     required Database database,
     required String tableName,

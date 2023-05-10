@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:scratcher/scratcher.dart';
 
-import '../../blocs/database_cubit/database_cubit.dart';
-import '../../models/position.dart';
-import '../../repos/position_repo.dart';
-import '../../screens/position_details_screen.dart';
-import '../../styles/theme.dart' as style;
-import '../info_widgets/error_widget.dart';
-import '../info_widgets/loading_widget.dart';
-import 'empty_positions.dart';
+import '../blocs/database_cubit/database_cubit.dart';
+import '../models/position.dart';
+import '../repos/position_repo.dart';
+import 'position_details_screen.dart';
+import '../styles/theme.dart' as style;
+import '../widgets/info_widgets/error_widget.dart';
+import '../widgets/info_widgets/loading_widget.dart';
+import '../widgets/info_widgets/empty_positions.dart';
 
-class ScratchPositions extends StatelessWidget {
+class ScratchScreen extends StatelessWidget {
   final String tableName;
 
-  const ScratchPositions({
+  const ScratchScreen({
     super.key,
     required this.tableName,
   });

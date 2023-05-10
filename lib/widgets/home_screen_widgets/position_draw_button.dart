@@ -1,14 +1,9 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 
-import '../../providers/animated_button_stream/stream_counter.dart';
-import 'scratch_positions.dart';
+import '../../screens/random_pos_screen.dart';
 
-Widget animatedButton({
-  required BuildContext context,
-  required String categoryName,
-  required String tableName,
-}) => OpenContainer(
+Widget positionDrawButton({required BuildContext context}) => OpenContainer(
   closedColor: Colors.transparent,
   closedElevation: 0,
   middleColor: Colors.transparent,
@@ -16,9 +11,7 @@ Widget animatedButton({
   openElevation: 0,
   transitionDuration: const Duration(milliseconds: 500),
   transitionType: ContainerTransitionType.fadeThrough,
-  openBuilder: (_, __) => ScratchPositions(
-    tableName: tableName,
-  ),
+  openBuilder: (_, __) => const RandomPosScreen(),
   closedBuilder: (_, __) => Container(
     padding: const EdgeInsets.all(20.0),
     margin: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -35,21 +28,17 @@ Widget animatedButton({
     ),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
+      children: const [
         Text(
-          categoryName,
-          style: const TextStyle(
+          "Zaskocz mnie!",
+          style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
             fontSize: 18.0,
           ),
         ),
-        Expanded(
-          child: Align(
-            alignment: Alignment.centerRight,
-            child: streamCounter(context, tableName),
-          ),
-        ),
+        SizedBox(width: 5.0),
+        Icon(Icons.card_giftcard_rounded),
       ],
     ),
   ),
