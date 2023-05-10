@@ -5,15 +5,19 @@ import '../../blocs/database_cubit/database_cubit.dart';
 import '../../blocs/position_bloc/position_bloc.dart';
 import '../../repos/position_repo.dart';
 
-BlocProvider<PositionBloc> lazyWomanOnTop(BuildContext context) => BlocProvider<PositionBloc>(
+BlocProvider<PositionBloc> lazyProvider(
+  BuildContext context,
+  String jsonFilename,
+  String tableName,
+) => BlocProvider<PositionBloc>(
   lazy: false,
   create: (_) => PositionBloc(
     database: context.read<DatabaseCubit>().database!,
     repo: PositionRepo(),
-    jsonFilename: "assets/json_data/woman_on_top.json",
+    jsonFilename: jsonFilename,
   )..add(
     TableNameEvent(
-      tableName: "WomanOnTop",
+      tableName: tableName,
     ),
   ),
 );

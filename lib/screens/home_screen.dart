@@ -37,14 +37,12 @@ class HomeScreen extends StatelessWidget {
             animatedButton(
               context: context,
               categoryName: "Man On Top",
-              jsonFilename: "assets/json_data/man_on_top.json",
               tableName: "ManOnTop",
             ),
             const SizedBox(height: 20.0),
             animatedButton(
               context: context,
               categoryName: "Woman On Top",
-              jsonFilename: "assets/json_data/woman_on_top.json",
               tableName: "WomanOnTop",
             ),
           ],

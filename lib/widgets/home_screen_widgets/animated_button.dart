@@ -7,7 +7,6 @@ import 'scratch_positions.dart';
 Widget animatedButton({
   required BuildContext context,
   required String categoryName,
-  required String jsonFilename,
   required String tableName,
 }) => OpenContainer(
   closedColor: Colors.transparent,
@@ -18,7 +17,6 @@ Widget animatedButton({
   transitionDuration: const Duration(milliseconds: 500),
   transitionType: ContainerTransitionType.fadeThrough,
   openBuilder: (_, __) => ScratchPositions(
-    jsonFilename: jsonFilename,
     tableName: tableName,
   ),
   closedBuilder: (_, __) => Container(

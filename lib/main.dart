@@ -4,8 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'blocs/database_cubit/database_cubit.dart';
 import 'providers/my_app/child_consumer_position.dart';
-import 'providers/my_app/lazy_man_on_top.dart';
-import 'providers/my_app/lazy_woman_on_top.dart';
+import 'providers/my_app/lazy_provider.dart';
 import 'widgets/info_widgets/loading_widget.dart';
 
 Future<void> main() async {
@@ -32,8 +31,8 @@ class MyApp extends StatelessWidget {
         if (state is DatabaseLoad) {
           return MultiBlocProvider(
             providers: [
-              lazyManOnTop(context),
-              lazyWomanOnTop(context),
+              lazyProvider(context, "assets/json_data/man_on_top.json", "ManOnTop"),
+              lazyProvider(context, "assets/json_data/woman_on_top.json", "WomanOnTop"),
             ],
             child: childConsumerPosition(),
           );
