@@ -1,7 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 
-import '../../screens/scratch_screen.dart';
+import '../../screens/selection_screen.dart';
 import '../../styles/theme.dart' as style;
 import 'category_button_counter.dart';
 
@@ -29,7 +29,7 @@ class _CategoryButtonState extends State<CategoryButton> {
     openElevation: 0,
     transitionDuration: const Duration(milliseconds: 500),
     transitionType: ContainerTransitionType.fadeThrough,
-    openBuilder: (_, __) => ScratchScreen(
+    openBuilder: (_, __) => SelectionScreen(
       callback: widget.callback,
       categoryName: widget.categoryName,
     ),

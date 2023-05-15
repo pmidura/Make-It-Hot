@@ -115,6 +115,32 @@ class DBProvider {
     return res.map((pos) => Position.fromJson(pos)).toList();
   }
 
+  // Get list of revealed positions
+  Future<List<Position>> getListOfRevealedPositions({
+    required String categoryName,
+  }) async {
+    final db = await database;
+    final res = await db!.rawQuery("SELECT * FROM Positions WHERE category='$categoryName' AND isRevealed='true'");
+
+    List<Position> revPositions =
+      res.isNotEmpty ? res.map((pos) => Position.fromJson(pos)).toList() : [];
+    
+    return revPositions;
+  }
+
+  // Get list of not revealed positions
+  Future<List<Position>> getListOfNotRevealedPositions({
+    required String categoryName,
+  }) async {
+    final db = await database;
+    final res = await db!.rawQuery("SELECT * FROM Positions WHERE category='$categoryName' AND isRevealed='false'");
+
+    List<Position> notRevPositions =
+      res.isNotEmpty ? res.map((pos) => Position.fromJson(pos)).toList() : [];
+
+    return notRevPositions;
+  }
+
   // Get number of revealed positions from db
   Future<int?> getNumberOfRevealedPositions() async {
     final db = await database;

@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import '../../styles/theme.dart' as style;
 
 class EmptyPositions extends StatelessWidget {
+  final String infoText;
+
   const EmptyPositions({
     super.key,
+    required this.infoText,
   });
 
   @override
@@ -23,7 +26,7 @@ class EmptyPositions extends StatelessWidget {
             height: 200.0,
           ),
           Text(
-            "Brak pozycji w wybranej kategorii!",
+            infoText,
             textAlign: TextAlign.center,
             style: style.purpleBold16(),
           ),

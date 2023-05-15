@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../models/position.dart';
 import '../providers/db_provider.dart';
 import '../styles/theme.dart' as style;
+import '../widgets/info_widgets/empty_positions.dart';
 import '../widgets/info_widgets/error_widget.dart';
 import '../widgets/info_widgets/loading_widget.dart';
 import '../widgets/random_position_screen_widgets/random_pos_scratcher.dart';
-import 'home_screen.dart';
 
 class RandomPositionScreen extends StatefulWidget {
   final Function callback;
@@ -31,7 +31,7 @@ class _RandomPositionScreenState extends State<RandomPositionScreen> {
         return errorWidget(snapshot.error.toString());
       } else if (snapshot.hasData) {
         if (snapshot.data!.isEmpty) {
-          return const HomeScreen();
+          return const EmptyPositions(infoText: "Odkryłeś już wszystkie pozycje!\n ||\n V\n Przejdź do ulubionych lub ekranu głównego (button here)");
         }
         List<Position> randPosition = snapshot.data!;
 
@@ -57,7 +57,7 @@ class _RandomPositionScreenState extends State<RandomPositionScreen> {
           ),
         );
       }
-      return const HomeScreen();
+      return const EmptyPositions(infoText: "Odkryłeś już wszystkie pozycje!\n ||\n V\n Przejdź do ulubionych lub ekranu głównego (button here)");
     },
   );
 }
