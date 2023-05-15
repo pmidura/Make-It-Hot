@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_progress_indicator/gradient_progress_indicator.dart';
 
-import '../../styles/theme.dart' as style;
-
 class GradientProgress extends StatelessWidget {
   const GradientProgress({
     super.key,
@@ -18,8 +16,8 @@ class GradientProgress extends StatelessWidget {
       0.8,
     ],
     gradientColors: [
-      style.GradientColors.firstGColor,
-      style.GradientColors.secondGColor,
+      Color.fromRGBO(220, 28, 19, 1),
+      Color.fromRGBO(234, 76, 70, 1),
     ],
     child: Text(""),
   );

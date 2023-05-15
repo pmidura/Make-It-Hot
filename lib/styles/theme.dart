@@ -34,8 +34,34 @@ BoxDecoration gradientContainer() => const BoxDecoration(
   ),
 );
 
-TextStyle purpleBold18() => const TextStyle(
+LinearGradient purpleLinearGradient() => const LinearGradient(
+  colors: [
+    Color.fromARGB(255, 195, 165, 235),
+    Color.fromARGB(255, 120, 50, 220),
+  ],
+);
+
+TextStyle purpleBold16() => const TextStyle(
   color: Color.fromARGB(255, 100, 0, 255),
-  fontWeight: FontWeight.bold,
-  fontSize: 18.0,
+  fontWeight: FontWeight.w500,
+  fontSize: 16.0,
+);
+
+TextStyle blackBold16() => const TextStyle(
+  color: Colors.black,
+  fontWeight: FontWeight.w500,
+  fontSize: 16.0,
+);
+
+TextStyle blackHalfOpacity13w600() => TextStyle(
+  fontSize: 13.0,
+  fontWeight: FontWeight.w600,
+  color: Colors.black.withOpacity(0.5),
+);
+
+TextStyle blackBold14w400() => const TextStyle(
+  height: 1.6,
+  fontSize: 14.0,
+  fontWeight: FontWeight.w400,
+  color: Colors.black,
 );

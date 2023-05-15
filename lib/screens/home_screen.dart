@@ -1,13 +1,32 @@
 import 'package:flutter/material.dart';
 
+import '../providers/db_provider.dart';
 import '../styles/theme.dart' as style;
+import '../widgets/home_screen_widgets/app_logo.dart';
+import '../widgets/home_screen_widgets/author_info.dart';
 import '../widgets/home_screen_widgets/category_button.dart';
-import '../widgets/home_screen_widgets/position_draw_button.dart';
+import '../widgets/home_screen_widgets/custom_divider.dart';
+import '../widgets/home_screen_widgets/categories_list_title.dart';
+import '../widgets/home_screen_widgets/progress_bar.dart';
+import '../widgets/home_screen_widgets/random_position_button.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({
     super.key,
   });
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  Stream<int?> revealedStream = DBProvider.db.getNumberOfRevealedPositions().asStream();
+
+  callback(newValue) {
+    setState(() {
+      revealedStream = newValue;
+    });
+  }
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -15,58 +34,20 @@ class HomeScreen extends StatelessWidget {
       width: double.infinity,
       height: double.infinity,
       decoration: style.gradientContainer(),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const SizedBox(height: 50.0),
-            Image.asset(
-              "assets/biting_lips.png",
-              width: 150.0,
-              height: 150.0,
-            ),
-            const SizedBox(height: 20.0),
-            positionDrawButton(context: context),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ListView(
-                  shrinkWrap: true,
-                  children: [
-                    categoryButton(
-                      context: context,
-                      categoryName: "Man On Top",
-                      tableName: "ManOnTop",
-                    ),
-                    const SizedBox(height: 20.0),
-                    categoryButton(
-                      context: context,
-                      categoryName: "Woman On Top",
-                      tableName: "WomanOnTop",
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ],
-        ),
-
-
-            // FutureBuilder(
-            //   // future: PositionRepo().getNumberOfPositionsFromTable(
-            //   //   database: context.read<DatabaseCubit>().database!,
-            //   //   tableName: "ManOnTop",
-            //   // ),
-            //   future: PositionRepo().getCountPositionsFromAllTables(
-            //     database: context.read<DatabaseCubit>().database!,
-            //   ),
-            //   builder: (BuildContext context, AsyncSnapshot snapshot) {
-            //     if (snapshot.hasData) {
-            //       return Center(child: Text(snapshot.data.toString()));
-            //     }
-            //     return const Text("");
-            //   }
-            // ),
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          appLogo(),
+          progressBar(),
+          customDivider(),
+          RandomPositionButton(callback: callback),
+          customDivider(),
+          categoriesListTitle(),
+          CategoryButton(callback: callback, categoryName: "Man On Top"),
+          CategoryButton(callback: callback, categoryName: "Woman On Top"),
+          customDivider(),
+          authorInfo(),
+        ],
       ),
     ),
   );

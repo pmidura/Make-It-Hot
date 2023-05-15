@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/position_details_widgets/info_widget.dart';
-import '../widgets/position_details_widgets/top_widget.dart';
+import '../styles/theme.dart' as style;
+import '../widgets/position_details_screen_widgets/info_widget.dart';
+import '../widgets/position_details_screen_widgets/top_widget.dart';
 
 class PositionDetailsScreen extends StatelessWidget {
   final String positionTitle;
@@ -19,13 +20,21 @@ class PositionDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    backgroundColor: const Color(0xFF151C26),
-    body: ListView(
-      padding: EdgeInsets.zero,
-      children: [
-        TopWidget(positionImage: positionImage),
-        InfoWidget(positionCategory: positionCategory, positionContent: positionContent),
-      ],
+    body: Container(
+      width: double.infinity,
+      height: double.infinity,
+      decoration: style.gradientContainer(),
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          TopWidget(positionImage: positionImage),
+          InfoWidget(
+            positionTitle: positionTitle,
+            positionCategory: positionCategory,
+            positionContent: positionContent,
+          ),
+        ],
+      ),
     ),
   );
 }
