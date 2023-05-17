@@ -13,8 +13,8 @@ Widget errorWidget(String error) => Scaffold(
       children: [
         Image.asset(
           "assets/biting_lips_logo.png",
-          width: 200.0,
-          height: 200.0,
+          width: 150.0,
+          height: 150.0,
         ),
         Text(
           "Error occured: $error",

@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import '../models/position.dart';
 import '../providers/db_provider.dart';
 import '../styles/theme.dart' as style;
-import '../widgets/home_screen_widgets/app_logo.dart';
-import '../widgets/home_screen_widgets/custom_divider.dart';
 import '../widgets/selection_screen_widgets/discover_new_positions_btn.dart';
 import '../widgets/selection_screen_widgets/revealed_list_title.dart';
 import '../widgets/selection_screen_widgets/revealed_positions_list.dart';
@@ -41,19 +39,24 @@ class _SelectionScreenState extends State<SelectionScreen> {
       width: double.infinity,
       height: double.infinity,
       decoration: style.gradientContainer(),
-      child: ListView(
-        padding: EdgeInsets.zero,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          appLogo(),
-          customDivider(),
           DiscoverNewPositionsBtn(
             callback: widget.callback,
             revealedCallback: revealedCallback,
             categoryName: widget.categoryName,
           ),
-          customDivider(),
           revealedListTitle(),
-          RevealedPositionsList(revealedStream: revealedStream),
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              shrinkWrap: true,
+              children: [              
+                RevealedPositionsList(revealedStream: revealedStream),
+              ],
+            ),
+          ),
         ],
       ),
     );

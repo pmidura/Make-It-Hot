@@ -9,6 +9,7 @@ import '../widgets/home_screen_widgets/custom_divider.dart';
 import '../widgets/home_screen_widgets/categories_list_title.dart';
 import '../widgets/home_screen_widgets/progress_bar.dart';
 import '../widgets/home_screen_widgets/random_position_button.dart';
+import '../widgets/splash_screen_widgets/app_name.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
@@ -38,6 +39,13 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: EdgeInsets.zero,
         children: [
           appLogo(),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 15.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: appName(),
+            ),
+          ),
           progressBar(),
           customDivider(),
           RandomPositionButton(callback: callback),

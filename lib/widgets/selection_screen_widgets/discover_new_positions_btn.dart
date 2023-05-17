@@ -39,7 +39,7 @@ class _DiscoverNewPositionsBtnState extends State<DiscoverNewPositionsBtn> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 25.0),
+          padding: const EdgeInsets.only(left: 25.0, top: 60.0),
           child: Text(
             "Zaczynamy zabawę?",
             style: style.blackBold16(),

@@ -1,4 +1,5 @@
 import 'package:animations/animations.dart';
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 
 import '../../screens/random_position_screen.dart';
@@ -54,7 +55,7 @@ class _RandomPositionButtonState extends State<RandomPositionButton> {
                   style: style.blackBold16(),
                 ),
                 const SizedBox(width: 5.0),
-                const Icon(Icons.card_giftcard_rounded),
+                const Icon(EvaIcons.giftOutline),
               ],
             ),
           ),

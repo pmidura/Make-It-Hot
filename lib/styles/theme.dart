@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class GradientColors {
   GradientColors();
@@ -41,27 +42,38 @@ LinearGradient purpleLinearGradient() => const LinearGradient(
   ],
 );
 
-TextStyle purpleBold16() => const TextStyle(
-  color: Color.fromARGB(255, 100, 0, 255),
+TextStyle purpleBold16() => TextStyle(
+  color: const Color.fromARGB(255, 100, 0, 255),
   fontWeight: FontWeight.w500,
   fontSize: 16.0,
+  fontFamily: GoogleFonts.courgette().fontFamily,
 );
 
-TextStyle blackBold16() => const TextStyle(
+TextStyle blackBold16() => TextStyle(
   color: Colors.black,
   fontWeight: FontWeight.w500,
   fontSize: 16.0,
+  fontFamily: GoogleFonts.courgette().fontFamily,
+);
+
+TextStyle blackBold20() => TextStyle(
+  color: Colors.black,
+  fontWeight: FontWeight.w500,
+  fontSize: 20.0,
+  fontFamily: GoogleFonts.courgette().fontFamily,
 );
 
 TextStyle blackHalfOpacity13w600() => TextStyle(
   fontSize: 13.0,
   fontWeight: FontWeight.w600,
   color: Colors.black.withOpacity(0.5),
+  fontFamily: GoogleFonts.courgette().fontFamily,
 );
 
-TextStyle blackBold14w400() => const TextStyle(
-  height: 1.6,
+TextStyle blackBold14w400() => TextStyle(
+  height: 1.7,
   fontSize: 14.0,
   fontWeight: FontWeight.w400,
   color: Colors.black,
+  fontFamily: GoogleFonts.courgette().fontFamily,
 );
