@@ -41,7 +41,7 @@ class _DiscoverNewPositionsBtnState extends State<DiscoverNewPositionsBtn> {
         Padding(
           padding: const EdgeInsets.only(left: 25.0, top: 60.0),
           child: Text(
-            "Zaczynamy zabawę?",
+            "Shall we start the fun?",
             style: style.blackBold16(),
           ),
         ),
@@ -58,7 +58,7 @@ class _DiscoverNewPositionsBtnState extends State<DiscoverNewPositionsBtn> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Odkryj nowe pozycje!",
+                  "Discover new positions!",
                   style: style.blackBold16(),
                 ),
               ],

@@ -45,7 +45,9 @@ class _ScratchScreenState extends State<ScratchScreen> {
         return errorWidget(snapshot.error.toString());
       } else if (snapshot.hasData) {
         if (snapshot.data!.isEmpty) {
-          return const EmptyPositions(infoText: "Brak nowych pozycji!");
+          return const EmptyPositions(
+            infoText: "You have already discovered all the positions in this category!",
+          );
         }
         List<Position> positions = snapshot.data!;
         return ScratchesGrid(
@@ -56,7 +58,9 @@ class _ScratchScreenState extends State<ScratchScreen> {
           categoryName: widget.categoryName,
         );
       }
-      return const EmptyPositions(infoText: "Brak nowych pozycji!");
+      return const EmptyPositions(
+        infoText: "You have already discovered all the positions in this category!",
+      );
     },
   );
 }

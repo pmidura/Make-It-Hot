@@ -8,7 +8,7 @@ Padding noExposedPositions() => Padding(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Text(
-        "Brak odkrytych pozycji",
+        "No exposed positions",
         style: style.blackBold16(),
       ),
       const SizedBox(width: 5.0),

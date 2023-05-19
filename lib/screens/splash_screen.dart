@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../styles/theme.dart' as style;
 import '../widgets/gradient_progess_widget/gradient_progress.dart';
+import '../widgets/home_screen_widgets/app_logo.dart';
 import '../widgets/splash_screen_widgets/app_name.dart';
 import 'home_screen.dart';
 
@@ -40,20 +41,12 @@ class _SplashScreenState extends State<SplashScreen> {
       height: double.infinity,
       decoration: style.gradientContainer(),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Column(
-            children: [
-              Image.asset(
-                "assets/biting_lips_logo.png",
-                width: 150,
-                height: 150,
-              ),
-              appName(),
-            ],
+          appLogo(),
+          appName(),
+          const Expanded(
+            child: GradientProgress(),
           ),
-          const GradientProgress(),
         ],
       ),
     ),

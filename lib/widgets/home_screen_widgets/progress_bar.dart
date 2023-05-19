@@ -21,7 +21,7 @@ Widget progressBar() => StreamBuilder2<int?, int?>(
         Padding(
           padding: const EdgeInsets.only(left: 25.0),
           child: Text(
-            "Twój postęp",
+            "Your progress",
             style: style.blackBold16(),
           ),
         ),

@@ -31,7 +31,9 @@ class _RandomPositionScreenState extends State<RandomPositionScreen> {
         return errorWidget(snapshot.error.toString());
       } else if (snapshot.hasData) {
         if (snapshot.data!.isEmpty) {
-          return const EmptyPositions(infoText: "Odkryłeś już wszystkie pozycje!\n ||\n V\n Przejdź do ulubionych lub ekranu głównego (button here)");
+          return const EmptyPositions(
+            infoText: "Odkryłeś już wszystkie pozycje!\n ||\n V\n Przejdź do ulubionych lub ekranu głównego (button here)",
+          );
         }
         List<Position> randPosition = snapshot.data!;
 
@@ -45,7 +47,7 @@ class _RandomPositionScreenState extends State<RandomPositionScreen> {
               Padding(
                 padding: const EdgeInsets.only(bottom: 10.0),
                 child: Text(
-                  "Zdrap, aby odsłonić!",
+                  "Scratch to reveal!",
                   style: style.blackBold16(),
                 ),
               ),
@@ -57,7 +59,9 @@ class _RandomPositionScreenState extends State<RandomPositionScreen> {
           ),
         );
       }
-      return const EmptyPositions(infoText: "Odkryłeś już wszystkie pozycje!\n ||\n V\n Przejdź do ulubionych lub ekranu głównego (button here)");
+      return const EmptyPositions(
+        infoText: "Odkryłeś już wszystkie pozycje!\n ||\n V\n Przejdź do ulubionych lub ekranu głównego (button here)",
+      );
     },
   );
 }
