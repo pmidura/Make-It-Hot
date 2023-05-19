@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../models/position.dart';
 import '../providers/db_provider.dart';
 import '../styles/theme.dart' as style;
-import '../widgets/info_widgets/empty_positions.dart';
 import '../widgets/info_widgets/error_widget.dart';
 import '../widgets/info_widgets/loading_widget.dart';
 import '../widgets/random_position_screen_widgets/random_pos_scratcher.dart';
+import '../widgets/random_position_screen_widgets/random_revealed_position.dart';
 
 class RandomPositionScreen extends StatefulWidget {
   final Function callback;
@@ -29,38 +29,30 @@ class _RandomPositionScreenState extends State<RandomPositionScreen> {
         return loadingWidget();
       } else if (snapshot.hasError) {
         return errorWidget(snapshot.error.toString());
-      } else if (snapshot.hasData) {
-        if (snapshot.data!.isEmpty) {
-          return const EmptyPositions(
-            infoText: "Odkryłeś już wszystkie pozycje!\n ||\n V\n Przejdź do ulubionych lub ekranu głównego (button here)",
-          );
-        }
-        List<Position> randPosition = snapshot.data!;
-
-        return Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: style.gradientContainer(),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 10.0),
-                child: Text(
-                  "Scratch to reveal!",
-                  style: style.blackBold16(),
-                ),
-              ),
-              RandomPosScratcher(
-                randPosition: randPosition,
-                widget: widget,
-              ),
-            ],
-          ),
-        );
+      } else if (snapshot.data!.isEmpty) {
+        return randomRevealedPosition();
       }
-      return const EmptyPositions(
-        infoText: "Odkryłeś już wszystkie pozycje!\n ||\n V\n Przejdź do ulubionych lub ekranu głównego (button here)",
+      List<Position> randPosition = snapshot.data!;
+      return Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: style.gradientContainer(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10.0),
+              child: Text(
+                "Scratch to reveal!",
+                style: style.blackBold16(),
+              ),
+            ),
+            RandomPosScratcher(
+              randPosition: randPosition,
+              widget: widget,
+            ),
+          ],
+        ),
       );
     },
   );

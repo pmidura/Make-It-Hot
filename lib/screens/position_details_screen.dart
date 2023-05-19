@@ -24,14 +24,21 @@ class PositionDetailsScreen extends StatelessWidget {
       width: double.infinity,
       height: double.infinity,
       decoration: style.gradientContainer(),
-      child: ListView(
-        padding: EdgeInsets.zero,
+      child: Column(
         children: [
           TopWidget(positionImage: positionImage),
-          InfoWidget(
-            positionTitle: positionTitle,
-            positionCategory: positionCategory,
-            positionContent: positionContent,
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              shrinkWrap: true,
+              children: [
+                InfoWidget(
+                  positionTitle: positionTitle,
+                  positionCategory: positionCategory,
+                  positionContent: positionContent,
+                ),
+              ],
+            ),
           ),
         ],
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../models/position.dart';
+import '../../screens/position_details_screen.dart';
 import '../../styles/theme.dart' as style;
 import '../gradient_progess_widget/gradient_progress.dart';
 import '../info_widgets/no_exposed_positions.dart';
@@ -45,6 +46,17 @@ class _RevealedPositionsListState extends State<RevealedPositionsList> {
             padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
             margin: const EdgeInsets.symmetric(horizontal: 10.0),
             child: ListTile(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => PositionDetailsScreen(
+                    positionTitle: revPositions[index].title,
+                    positionContent: revPositions[index].content,
+                    positionImage: revPositions[index].image,
+                    positionCategory: revPositions[index].category,
+                  ),
+                ),
+              ),
               leading: CircleAvatar(
                 radius: 25.0,
                 backgroundImage: NetworkImage(revPositions[index].image),

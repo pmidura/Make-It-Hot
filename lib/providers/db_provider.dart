@@ -115,6 +115,13 @@ class DBProvider {
     return res.map((pos) => Position.fromJson(pos)).toList();
   }
 
+  // When all of positions are revealed get random revealed position from db
+  Future<List<Position>> getRandomRevealedPosition() async {
+    final db = await database;
+    final res = await db!.rawQuery("SELECT * FROM Positions WHERE isRevealed='true' ORDER BY RANDOM() LIMIT 1");
+    return res.map((pos) => Position.fromJson(pos)).toList();
+  }
+
   // Get list of revealed positions
   Future<List<Position>> getListOfRevealedPositions({
     required String categoryName,
