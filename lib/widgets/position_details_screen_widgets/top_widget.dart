@@ -32,7 +32,7 @@ class TopWidget extends StatelessWidget {
             aspectRatio: 3 / 2,
             child: FadeInImage(
               fit: BoxFit.cover,
-              placeholder: kTransparentImage as ImageProvider,
+              placeholder: MemoryImage(kTransparentImage),
               image: positionImage,
             ),
           ),
