@@ -18,7 +18,9 @@ StreamBuilder<List<Position>> randomRevealedPosition() => StreamBuilder(
     return PositionDetailsScreen(
       positionTitle: randRevPosition.first.title,
       positionContent: randRevPosition.first.content,
-      positionImage: randRevPosition.first.image,
+      positionImage: randRevPosition.first.category == "Animated" ?
+        AssetImage('assets/pos_img/${randRevPosition.first.category}/${randRevPosition.first.title}.gif') :
+        AssetImage('assets/pos_img/${randRevPosition.first.category}/${randRevPosition.first.title}.jpg'),
       positionCategory: randRevPosition.first.category,
     );
   },

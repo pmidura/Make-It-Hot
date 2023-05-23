@@ -9,7 +9,7 @@ class TopWidget extends StatelessWidget {
     required this.positionImage,
   });
 
-  final String positionImage;
+  final AssetImage positionImage;
 
   @override
   Widget build(BuildContext context) => Stack(
@@ -30,9 +30,9 @@ class TopWidget extends StatelessWidget {
           ),
           AspectRatio(
             aspectRatio: 3 / 2,
-            child: FadeInImage.memoryNetwork(
+            child: FadeInImage(
               fit: BoxFit.cover,
-              placeholder: kTransparentImage,
+              placeholder: kTransparentImage as ImageProvider,
               image: positionImage,
             ),
           ),

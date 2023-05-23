@@ -7,7 +7,7 @@ import '../widgets/position_details_screen_widgets/top_widget.dart';
 class PositionDetailsScreen extends StatelessWidget {
   final String positionTitle;
   final String positionContent;
-  final String positionImage;
+  final AssetImage positionImage;
   final String positionCategory;
 
   const PositionDetailsScreen({

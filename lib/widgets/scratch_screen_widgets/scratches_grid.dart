@@ -68,7 +68,9 @@ class _ScratchesGridState extends State<ScratchesGrid> {
                           builder: (_) => PositionDetailsScreen(
                             positionTitle: widget.positions[index].title,
                             positionContent: widget.positions[index].content,
-                            positionImage: widget.positions[index].image,
+                            positionImage: widget.positions[index].category == "Animated" ?
+                              AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.gif') :
+                              AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.jpg'),
                             positionCategory: widget.positions[index].category,
                           ),
                         ),
@@ -89,7 +91,9 @@ class _ScratchesGridState extends State<ScratchesGrid> {
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height,
                     child: Image(
-                      image: NetworkImage(widget.positions[index].image),
+                      image: widget.positions[index].category == "Animated" ?
+                        AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.gif') :
+                        AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.jpg'),
                       fit: BoxFit.cover,
                     ),
                   ),

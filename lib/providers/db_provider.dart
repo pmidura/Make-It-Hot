@@ -9,7 +9,7 @@ import '../models/position.dart';
 class DBProvider {
   static Database? _database;
   static final DBProvider db = DBProvider._();
-  static const String _dbName = "make_it_hot.db";
+  static const String _dbName = "makeItHot.db";
   static const int _version = 1;
 
   DBProvider._();
@@ -44,7 +44,6 @@ class DBProvider {
             CREATE TABLE IF NOT EXISTS Positions(
               title TEXT PRIMARY KEY,
               content TEXT NOT NULL,
-              image TEXT NOT NULL,
               category TEXT NOT NULL,
               isRevealed TEXT NOT NULL
             )

@@ -38,7 +38,9 @@ class RandomPosScratcher extends StatelessWidget {
               builder: (_) => PositionDetailsScreen(
                 positionTitle: randPosition.first.title,
                 positionContent: randPosition.first.content,
-                positionImage: randPosition.first.image,
+                positionImage: randPosition.first.category == "Animated" ?
+                  AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.gif') :
+                  AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.jpg'),
                 positionCategory: randPosition.first.category,
               ),
             ),
@@ -49,7 +51,9 @@ class RandomPosScratcher extends StatelessWidget {
         width: 200.0,
         height: 200.0,
         child: Image(
-          image: NetworkImage(randPosition.first.image),
+          image: randPosition.first.category == "Animated" ?
+            AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.gif') :
+            AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.jpg'),
           fit: BoxFit.cover,
         ),
       ),

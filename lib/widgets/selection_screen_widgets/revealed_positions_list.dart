@@ -52,14 +52,18 @@ class _RevealedPositionsListState extends State<RevealedPositionsList> {
                   builder: (_) => PositionDetailsScreen(
                     positionTitle: revPositions[index].title,
                     positionContent: revPositions[index].content,
-                    positionImage: revPositions[index].image,
+                    positionImage: revPositions[index].category == "Animated" ?
+                      AssetImage('assets/pos_img/${revPositions[index].category}/${revPositions[index].title}.gif') :
+                      AssetImage('assets/pos_img/${revPositions[index].category}/${revPositions[index].title}.jpg'),
                     positionCategory: revPositions[index].category,
                   ),
                 ),
               ),
               leading: CircleAvatar(
                 radius: 25.0,
-                backgroundImage: NetworkImage(revPositions[index].image),
+                backgroundImage: revPositions[index].category == "Animated" ?
+                  AssetImage('assets/pos_img/${revPositions[index].category}/${revPositions[index].title}.gif') :
+                  AssetImage('assets/pos_img/${revPositions[index].category}/${revPositions[index].title}.jpg'),
                 backgroundColor: Colors.transparent,
               ),
               title: Text(
