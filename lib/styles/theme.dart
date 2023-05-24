@@ -12,6 +12,8 @@ class GradientColors {
   static const Color sixthGColor = Color(0xFFB6BAA6);
 }
 
+Color starColor = const Color.fromRGBO(255, 215, 174, 1.0);
+
 BoxDecoration gradientContainer() => const BoxDecoration(
   gradient: LinearGradient(
     begin: Alignment.topRight,

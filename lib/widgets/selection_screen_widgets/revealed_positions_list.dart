@@ -5,6 +5,7 @@ import '../../screens/position_details_screen.dart';
 import '../../styles/theme.dart' as style;
 import '../gradient_progess_widget/gradient_progress.dart';
 import '../info_widgets/no_exposed_positions.dart';
+import 'favourite_star.dart';
 
 class RevealedPositionsList extends StatefulWidget {
   final Stream<List<Position>> revealedStream;
@@ -69,6 +70,10 @@ class _RevealedPositionsListState extends State<RevealedPositionsList> {
               title: Text(
                 revPositions[index].title,
                 style: style.blackBold16(),
+              ),
+              trailing: FavouriteStar(
+                revPositions: revPositions,
+                index: index,
               ),
             ),
           );

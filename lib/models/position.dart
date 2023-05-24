@@ -11,12 +11,14 @@ class Position {
   final String content;
   final String category;
   final String isRevealed;
+  final String isFavourite;
 
   const Position({
     required this.title,
     required this.content,
     required this.category,
     required this.isRevealed,
+    required this.isFavourite,
   });
 
   factory Position.fromJson(Map<String, dynamic> json) => Position(
@@ -24,6 +26,7 @@ class Position {
     content: json["content"],
     category: json["category"],
     isRevealed: json["isRevealed"],
+    isFavourite: json["isFavourite"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -31,5 +34,6 @@ class Position {
     'content': content,
     'category': category,
     'isRevealed': isRevealed,
+    'isFavourite': isFavourite,
   };
 }

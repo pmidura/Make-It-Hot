@@ -45,7 +45,8 @@ class DBProvider {
               title TEXT PRIMARY KEY,
               content TEXT NOT NULL,
               category TEXT NOT NULL,
-              isRevealed TEXT NOT NULL
+              isRevealed TEXT NOT NULL,
+              isFavourite TEXT NOT NULL
             )
         """);
         },
@@ -176,6 +177,36 @@ class DBProvider {
   }) async {
     final db = await database;
     final res = Sqflite.firstIntValue(await db!.rawQuery("SELECT COUNT(*) FROM Positions WHERE category='$categoryName'"));
+    return res;
+  }
+
+  // Get favourite value (true or false) from position in category
+  Future<dynamic> getFavValue({
+    required String categoryName,
+    required String title,
+  }) async {
+    final db = await database;
+    final res = await db!.rawQuery("SELECT isFavourite FROM Positions WHERE category='$categoryName' AND title='$title'");
+    return res;
+  }
+
+  // Add position to favourite
+  Future<dynamic> addToFav({
+    required String categoryName,
+    required String title,
+  }) async {
+    final db = await database;
+    final res = await db!.rawQuery("UPDATE Positions SET isFavourite='true' WHERE category='$categoryName' AND title='$title'");
+    return res;
+  }
+
+  // Remove position from favourite
+  Future<dynamic> removeFromFav({
+    required String categoryName,
+    required String title,
+  }) async {
+    final db = await database;
+    final res = await db!.rawQuery("UPDATE Positions SET isFavourite='false' WHERE category='$categoryName' AND title='$title'");
     return res;
   }
 }
