@@ -180,6 +180,17 @@ class DBProvider {
     return res;
   }
 
+  // Get all favourite positions
+  Future<List<Position>> getAllFavPositions() async {
+    final db = await database;
+    final res = await db!.rawQuery("SELECT * FROM Positions WHERE isFavourite='true'");
+
+    List<Position> positions =
+      res.isNotEmpty ? res.map((pos) => Position.fromJson(pos)).toList() : [];
+
+    return positions;
+  }
+
   // Get favourite value (true or false) from position in category
   Future<dynamic> getFavValue({
     required String categoryName,

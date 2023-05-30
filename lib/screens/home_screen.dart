@@ -7,6 +7,7 @@ import '../widgets/home_screen_widgets/author_info.dart';
 import '../widgets/home_screen_widgets/category_button.dart';
 import '../widgets/home_screen_widgets/custom_divider.dart';
 import '../widgets/home_screen_widgets/categories_list_title.dart';
+import '../widgets/home_screen_widgets/favourite_positions_button.dart';
 import '../widgets/home_screen_widgets/progress_bar.dart';
 import '../widgets/home_screen_widgets/random_position_button.dart';
 import '../widgets/splash_screen_widgets/app_name.dart';
@@ -48,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           progressBar(),
           customDivider(),
+          const FavouritePositionsButton(),
           RandomPositionButton(callback: callback),
           customDivider(),
           categoriesListTitle(),
