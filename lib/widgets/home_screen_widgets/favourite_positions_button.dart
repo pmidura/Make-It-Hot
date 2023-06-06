@@ -1,6 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../screens/favourite_positions_screen.dart';
 import '../../styles/theme.dart' as style;
@@ -31,7 +32,7 @@ class _FavouritePositionsButtonState extends State<FavouritePositionsButton> {
         Padding(
           padding: const EdgeInsets.only(left: 25.0),
           child: Text(
-            "Favourite positions",
+            AppLocalizations.of(context)!.favPositions,
             style: style.blackBold16(),
           ),
         ),
@@ -48,7 +49,7 @@ class _FavouritePositionsButtonState extends State<FavouritePositionsButton> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "View positions!",
+                  AppLocalizations.of(context)!.viewPositions,
                   style: style.blackBold16(),
                 ),
                 const SizedBox(width: 5.0),

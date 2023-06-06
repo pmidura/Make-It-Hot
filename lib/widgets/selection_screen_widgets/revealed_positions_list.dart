@@ -27,7 +27,7 @@ class _RevealedPositionsListState extends State<RevealedPositionsList> {
       if (snapshot.connectionState == ConnectionState.waiting) {
         return const GradientProgress();
       } else if (snapshot.data!.isEmpty) {
-        return noExposedPositions();
+        return noExposedPositions(context);
       }
       List<Position> revPositions = snapshot.data!;
       

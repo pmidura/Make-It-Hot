@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../providers/db_provider.dart';
 import '../styles/theme.dart' as style;
@@ -52,18 +53,18 @@ class _HomeScreenState extends State<HomeScreen> {
           const FavouritePositionsButton(),
           RandomPositionButton(callback: callback),
           customDivider(),
-          categoriesListTitle(),
-          CategoryButton(callback: callback, categoryName: "Man On Top"),
-          CategoryButton(callback: callback, categoryName: "Woman On Top"),
-          CategoryButton(callback: callback, categoryName: "Oral"),
-          CategoryButton(callback: callback, categoryName: "Threesome"),
-          CategoryButton(callback: callback, categoryName: "Foursome"),
-          CategoryButton(callback: callback, categoryName: "Spooning"),
-          CategoryButton(callback: callback, categoryName: "Acrobatic"),
-          CategoryButton(callback: callback, categoryName: "Kneeling Or Standing"),
-          CategoryButton(callback: callback, categoryName: "Anal"),
-          CategoryButton(callback: callback, categoryName: "Animated"),
-          CategoryButton(callback: callback, categoryName: "Larger People"),
+          categoriesListTitle(context),
+          CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.manOnTop),
+          CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.womanOnTop),
+          CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.oral),
+          CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.threesome),
+          CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.foursome),
+          CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.spooning),
+          CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.acrobatic),
+          CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.kneeOrStand),
+          CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.anal),
+          CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.animated),
+          CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.largPeople),
           customDivider(),
           authorInfo(),
         ],

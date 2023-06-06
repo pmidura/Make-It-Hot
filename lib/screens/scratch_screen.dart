@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../models/position.dart';
 import '../providers/db_provider.dart';
@@ -45,8 +46,8 @@ class _ScratchScreenState extends State<ScratchScreen> {
         return errorWidget(snapshot.error.toString());
       } else if (snapshot.hasData) {
         if (snapshot.data!.isEmpty) {
-          return const EmptyPositions(
-            infoText: "You have already discovered all the positions in this category!",
+          return EmptyPositions(
+            infoText: AppLocalizations.of(context)!.scratchScreenInfoText,
           );
         }
         List<Position> positions = snapshot.data!;
@@ -58,8 +59,8 @@ class _ScratchScreenState extends State<ScratchScreen> {
           categoryName: widget.categoryName,
         );
       }
-      return const EmptyPositions(
-        infoText: "You have already discovered all the positions in this category!",
+      return EmptyPositions(
+        infoText: AppLocalizations.of(context)!.scratchScreenInfoText,
       );
     },
   );

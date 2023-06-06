@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../models/position.dart';
 import '../providers/db_provider.dart';
@@ -43,7 +44,7 @@ class _RandomPositionScreenState extends State<RandomPositionScreen> {
             Padding(
               padding: const EdgeInsets.only(bottom: 10.0),
               child: Text(
-                "Scratch to reveal!",
+                AppLocalizations.of(context)!.scratchToReveal,
                 style: style.blackBold16(),
               ),
             ),

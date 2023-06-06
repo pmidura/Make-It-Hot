@@ -29,7 +29,7 @@ class _FavouritePositionsListState extends State<FavouritePositionsList> {
       if (snapshot.connectionState == ConnectionState.waiting) {
         return const GradientProgress();
       } else if (snapshot.data!.isEmpty) {
-        return noFavPositions();
+        return noFavPositions(context);
       }
       List<Position> favPositions = snapshot.data!;
       

@@ -38,7 +38,7 @@ class _ScratchesGridState extends State<ScratchesGrid> {
       padding: const EdgeInsets.all(10.0),
       child: Column(
         children: [
-          topText(),
+          topText(context),
           customDivider(),
           Expanded(
             child: GridView.builder(

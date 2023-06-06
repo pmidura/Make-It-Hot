@@ -32,7 +32,7 @@ class _FavouritePositionsScreenState extends State<FavouritePositionsScreen> {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        favouriteListTitle(),
+        favouriteListTitle(context),
         Expanded(
           child: ListView(
             padding: EdgeInsets.zero,

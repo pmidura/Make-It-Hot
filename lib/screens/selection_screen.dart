@@ -47,7 +47,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
             revealedCallback: revealedCallback,
             categoryName: widget.categoryName,
           ),
-          revealedListTitle(),
+          revealedListTitle(context),
           Expanded(
             child: ListView(
               padding: EdgeInsets.zero,

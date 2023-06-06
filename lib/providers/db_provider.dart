@@ -100,6 +100,31 @@ class DBProvider {
     required String categoryName,
   }) async {
     final db = await database;
+
+    if (categoryName == "Mężczyzna na górze") {
+      categoryName = "Man On Top";
+    } else if (categoryName == "Kobieta na górze") {
+      categoryName = "Woman On Top";
+    } else if (categoryName == "Seks oralny") {
+      categoryName = "Oral";
+    } else if (categoryName == "Seks w trójkącie") {
+      categoryName = "Threesome";
+    } else if (categoryName == "Seks w czworokącie") {
+      categoryName = "Foursome";
+    } else if (categoryName == "Na łyżeczkę") {
+      categoryName = "Spooning";
+    } else if (categoryName == "Akrobatyczne") {
+      categoryName = "Acrobatic";
+    } else if (categoryName == "Klęcząc lub stojąc") {
+      categoryName = "Kneeling Or Standing";
+    } else if (categoryName == "Seks analny") {
+      categoryName = "Anal";
+    } else if (categoryName == "Animowane") {
+      categoryName = "Animated";
+    } else if (categoryName == "Dla puszystych") {
+      categoryName = "Larger People";
+    }
+
     final res = await db!.rawQuery("SELECT * FROM Positions WHERE category='$categoryName'");
 
     List<Position> positions =
@@ -127,6 +152,31 @@ class DBProvider {
     required String categoryName,
   }) async {
     final db = await database;
+
+    if (categoryName == "Mężczyzna na górze") {
+      categoryName = "Man On Top";
+    } else if (categoryName == "Kobieta na górze") {
+      categoryName = "Woman On Top";
+    } else if (categoryName == "Seks oralny") {
+      categoryName = "Oral";
+    } else if (categoryName == "Seks w trójkącie") {
+      categoryName = "Threesome";
+    } else if (categoryName == "Seks w czworokącie") {
+      categoryName = "Foursome";
+    } else if (categoryName == "Na łyżeczkę") {
+      categoryName = "Spooning";
+    } else if (categoryName == "Akrobatyczne") {
+      categoryName = "Acrobatic";
+    } else if (categoryName == "Klęcząc lub stojąc") {
+      categoryName = "Kneeling Or Standing";
+    } else if (categoryName == "Seks analny") {
+      categoryName = "Anal";
+    } else if (categoryName == "Animowane") {
+      categoryName = "Animated";
+    } else if (categoryName == "Dla puszystych") {
+      categoryName = "Larger People";
+    }
+
     final res = await db!.rawQuery("SELECT * FROM Positions WHERE category='$categoryName' AND isRevealed='true'");
 
     List<Position> revPositions =
@@ -140,6 +190,31 @@ class DBProvider {
     required String categoryName,
   }) async {
     final db = await database;
+
+    if (categoryName == "Mężczyzna na górze") {
+      categoryName = "Man On Top";
+    } else if (categoryName == "Kobieta na górze") {
+      categoryName = "Woman On Top";
+    } else if (categoryName == "Seks oralny") {
+      categoryName = "Oral";
+    } else if (categoryName == "Seks w trójkącie") {
+      categoryName = "Threesome";
+    } else if (categoryName == "Seks w czworokącie") {
+      categoryName = "Foursome";
+    } else if (categoryName == "Na łyżeczkę") {
+      categoryName = "Spooning";
+    } else if (categoryName == "Akrobatyczne") {
+      categoryName = "Acrobatic";
+    } else if (categoryName == "Klęcząc lub stojąc") {
+      categoryName = "Kneeling Or Standing";
+    } else if (categoryName == "Seks analny") {
+      categoryName = "Anal";
+    } else if (categoryName == "Animowane") {
+      categoryName = "Animated";
+    } else if (categoryName == "Dla puszystych") {
+      categoryName = "Larger People";
+    }
+
     final res = await db!.rawQuery("SELECT * FROM Positions WHERE category='$categoryName' AND isRevealed='false'");
 
     List<Position> notRevPositions =
@@ -167,6 +242,31 @@ class DBProvider {
     required String categoryName,
   }) async {
     final db = await database;
+
+    if (categoryName == "Mężczyzna na górze") {
+      categoryName = "Man On Top";
+    } else if (categoryName == "Kobieta na górze") {
+      categoryName = "Woman On Top";
+    } else if (categoryName == "Seks oralny") {
+      categoryName = "Oral";
+    } else if (categoryName == "Seks w trójkącie") {
+      categoryName = "Threesome";
+    } else if (categoryName == "Seks w czworokącie") {
+      categoryName = "Foursome";
+    } else if (categoryName == "Na łyżeczkę") {
+      categoryName = "Spooning";
+    } else if (categoryName == "Akrobatyczne") {
+      categoryName = "Acrobatic";
+    } else if (categoryName == "Klęcząc lub stojąc") {
+      categoryName = "Kneeling Or Standing";
+    } else if (categoryName == "Seks analny") {
+      categoryName = "Anal";
+    } else if (categoryName == "Animowane") {
+      categoryName = "Animated";
+    } else if (categoryName == "Dla puszystych") {
+      categoryName = "Larger People";
+    }
+
     final res = Sqflite.firstIntValue(await db!.rawQuery("SELECT COUNT(*) FROM Positions WHERE category='$categoryName' AND isRevealed='true'"));
     return res;
   }
@@ -176,6 +276,31 @@ class DBProvider {
     required String categoryName,
   }) async {
     final db = await database;
+
+    if (categoryName == "Mężczyzna na górze") {
+      categoryName = "Man On Top";
+    } else if (categoryName == "Kobieta na górze") {
+      categoryName = "Woman On Top";
+    } else if (categoryName == "Seks oralny") {
+      categoryName = "Oral";
+    } else if (categoryName == "Seks w trójkącie") {
+      categoryName = "Threesome";
+    } else if (categoryName == "Seks w czworokącie") {
+      categoryName = "Foursome";
+    } else if (categoryName == "Na łyżeczkę") {
+      categoryName = "Spooning";
+    } else if (categoryName == "Akrobatyczne") {
+      categoryName = "Acrobatic";
+    } else if (categoryName == "Klęcząc lub stojąc") {
+      categoryName = "Kneeling Or Standing";
+    } else if (categoryName == "Seks analny") {
+      categoryName = "Anal";
+    } else if (categoryName == "Animowane") {
+      categoryName = "Animated";
+    } else if (categoryName == "Dla puszystych") {
+      categoryName = "Larger People";
+    }
+
     final res = Sqflite.firstIntValue(await db!.rawQuery("SELECT COUNT(*) FROM Positions WHERE category='$categoryName'"));
     return res;
   }
@@ -197,6 +322,31 @@ class DBProvider {
     required String title,
   }) async {
     final db = await database;
+
+    if (categoryName == "Mężczyzna na górze") {
+      categoryName = "Man On Top";
+    } else if (categoryName == "Kobieta na górze") {
+      categoryName = "Woman On Top";
+    } else if (categoryName == "Seks oralny") {
+      categoryName = "Oral";
+    } else if (categoryName == "Seks w trójkącie") {
+      categoryName = "Threesome";
+    } else if (categoryName == "Seks w czworokącie") {
+      categoryName = "Foursome";
+    } else if (categoryName == "Na łyżeczkę") {
+      categoryName = "Spooning";
+    } else if (categoryName == "Akrobatyczne") {
+      categoryName = "Acrobatic";
+    } else if (categoryName == "Klęcząc lub stojąc") {
+      categoryName = "Kneeling Or Standing";
+    } else if (categoryName == "Seks analny") {
+      categoryName = "Anal";
+    } else if (categoryName == "Animowane") {
+      categoryName = "Animated";
+    } else if (categoryName == "Dla puszystych") {
+      categoryName = "Larger People";
+    }
+
     final res = await db!.rawQuery("SELECT isFavourite FROM Positions WHERE category='$categoryName' AND title='$title'");
     return res;
   }
@@ -207,6 +357,31 @@ class DBProvider {
     required String title,
   }) async {
     final db = await database;
+
+    if (categoryName == "Mężczyzna na górze") {
+      categoryName = "Man On Top";
+    } else if (categoryName == "Kobieta na górze") {
+      categoryName = "Woman On Top";
+    } else if (categoryName == "Seks oralny") {
+      categoryName = "Oral";
+    } else if (categoryName == "Seks w trójkącie") {
+      categoryName = "Threesome";
+    } else if (categoryName == "Seks w czworokącie") {
+      categoryName = "Foursome";
+    } else if (categoryName == "Na łyżeczkę") {
+      categoryName = "Spooning";
+    } else if (categoryName == "Akrobatyczne") {
+      categoryName = "Acrobatic";
+    } else if (categoryName == "Klęcząc lub stojąc") {
+      categoryName = "Kneeling Or Standing";
+    } else if (categoryName == "Seks analny") {
+      categoryName = "Anal";
+    } else if (categoryName == "Animowane") {
+      categoryName = "Animated";
+    } else if (categoryName == "Dla puszystych") {
+      categoryName = "Larger People";
+    }
+
     final res = await db!.rawQuery("UPDATE Positions SET isFavourite='true' WHERE category='$categoryName' AND title='$title'");
     return res;
   }
@@ -217,6 +392,31 @@ class DBProvider {
     required String title,
   }) async {
     final db = await database;
+
+    if (categoryName == "Mężczyzna na górze") {
+      categoryName = "Man On Top";
+    } else if (categoryName == "Kobieta na górze") {
+      categoryName = "Woman On Top";
+    } else if (categoryName == "Seks oralny") {
+      categoryName = "Oral";
+    } else if (categoryName == "Seks w trójkącie") {
+      categoryName = "Threesome";
+    } else if (categoryName == "Seks w czworokącie") {
+      categoryName = "Foursome";
+    } else if (categoryName == "Na łyżeczkę") {
+      categoryName = "Spooning";
+    } else if (categoryName == "Akrobatyczne") {
+      categoryName = "Acrobatic";
+    } else if (categoryName == "Klęcząc lub stojąc") {
+      categoryName = "Kneeling Or Standing";
+    } else if (categoryName == "Seks analny") {
+      categoryName = "Anal";
+    } else if (categoryName == "Animowane") {
+      categoryName = "Animated";
+    } else if (categoryName == "Dla puszystych") {
+      categoryName = "Larger People";
+    }
+
     final res = await db!.rawQuery("UPDATE Positions SET isFavourite='false' WHERE category='$categoryName' AND title='$title'");
     return res;
   }

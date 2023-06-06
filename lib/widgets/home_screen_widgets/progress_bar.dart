@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:multiple_stream_builder/multiple_stream_builder.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
@@ -21,7 +22,7 @@ Widget progressBar() => StreamBuilder2<int?, int?>(
         Padding(
           padding: const EdgeInsets.only(left: 25.0),
           child: Text(
-            "Your progress",
+            AppLocalizations.of(context)!.yourProgress,
             style: style.blackBold16(),
           ),
         ),

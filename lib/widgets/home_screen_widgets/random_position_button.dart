@@ -1,6 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../screens/random_position_screen.dart';
 import '../../styles/theme.dart' as style;
@@ -34,7 +35,7 @@ class _RandomPositionButtonState extends State<RandomPositionButton> {
         Padding(
           padding: const EdgeInsets.only(left: 25.0),
           child: Text(
-            "Can't decide?",
+            AppLocalizations.of(context)!.cantDecide,
             style: style.blackBold16(),
           ),
         ),
@@ -51,7 +52,7 @@ class _RandomPositionButtonState extends State<RandomPositionButton> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Surprise me!",
+                  AppLocalizations.of(context)!.surpriseMe,
                   style: style.blackBold16(),
                 ),
                 const SizedBox(width: 5.0),

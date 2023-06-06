@@ -1,5 +1,6 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../screens/scratch_screen.dart';
 import '../../styles/theme.dart' as style;
@@ -41,7 +42,7 @@ class _DiscoverNewPositionsBtnState extends State<DiscoverNewPositionsBtn> {
         Padding(
           padding: const EdgeInsets.only(left: 25.0, top: 60.0),
           child: Text(
-            "Shall we start the fun?",
+            AppLocalizations.of(context)!.shallWeStartFun,
             style: style.blackBold16(),
           ),
         ),
@@ -58,7 +59,7 @@ class _DiscoverNewPositionsBtnState extends State<DiscoverNewPositionsBtn> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Discover new positions!",
+                  AppLocalizations.of(context)!.discoverNewPos,
                   style: style.blackBold16(),
                 ),
               ],
