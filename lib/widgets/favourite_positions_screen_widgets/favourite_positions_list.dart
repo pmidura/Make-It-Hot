@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import '../../models/position.dart';
@@ -54,7 +56,9 @@ class _FavouritePositionsListState extends State<FavouritePositionsList> {
                 MaterialPageRoute(
                   builder: (_) => PositionDetailsScreen(
                     positionTitle: favPositions[index].title,
-                    positionContent: favPositions[index].content,
+                    positionContent: Platform.localeName.substring(0, 2) == "pl" ?
+                      favPositions[index].translateContentPL :
+                      favPositions[index].content,
                     positionImage: favPositions[index].category == "Animated" ?
                       AssetImage('assets/pos_img/${favPositions[index].category}/${favPositions[index].title}.gif') :
                       AssetImage('assets/pos_img/${favPositions[index].category}/${favPositions[index].title}.jpg'),

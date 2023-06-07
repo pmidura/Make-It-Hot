@@ -44,6 +44,7 @@ class DBProvider {
             CREATE TABLE IF NOT EXISTS Positions(
               title TEXT PRIMARY KEY,
               content TEXT NOT NULL,
+              translateContentPL TEXT NOT NULL,
               category TEXT NOT NULL,
               isRevealed TEXT NOT NULL,
               isFavourite TEXT NOT NULL

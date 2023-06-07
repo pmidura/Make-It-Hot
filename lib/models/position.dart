@@ -9,6 +9,7 @@ String positionToJson(List<Position> data) =>
 class Position {
   final String title;
   final String content;
+  final String translateContentPL;
   final String category;
   final String isRevealed;
   final String isFavourite;
@@ -16,6 +17,7 @@ class Position {
   const Position({
     required this.title,
     required this.content,
+    required this.translateContentPL,
     required this.category,
     required this.isRevealed,
     required this.isFavourite,
@@ -24,6 +26,7 @@ class Position {
   factory Position.fromJson(Map<String, dynamic> json) => Position(
     title: json["title"],
     content: json["content"],
+    translateContentPL: json["translateContentPL"],
     category: json["category"],
     isRevealed: json["isRevealed"],
     isFavourite: json["isFavourite"],
@@ -32,6 +35,7 @@ class Position {
   Map<String, dynamic> toJson() => {
     'title': title,
     'content': content,
+    'translateContentPL': translateContentPL,
     'category': category,
     'isRevealed': isRevealed,
     'isFavourite': isFavourite,

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:scratcher/scratcher.dart';
 
@@ -37,7 +39,9 @@ class RandomPosScratcher extends StatelessWidget {
             MaterialPageRoute(
               builder: (_) => PositionDetailsScreen(
                 positionTitle: randPosition.first.title,
-                positionContent: randPosition.first.content,
+                positionContent: Platform.localeName.substring(0, 2) == "pl" ?
+                  randPosition.first.translateContentPL :
+                  randPosition.first.content,
                 positionImage: randPosition.first.category == "Animated" ?
                   AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.gif') :
                   AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.jpg'),

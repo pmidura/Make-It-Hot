@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import '../../models/position.dart';
@@ -17,7 +19,9 @@ StreamBuilder<List<Position>> randomRevealedPosition() => StreamBuilder(
     List<Position> randRevPosition = randRevSnapshot.data!;
     return PositionDetailsScreen(
       positionTitle: randRevPosition.first.title,
-      positionContent: randRevPosition.first.content,
+      positionContent: Platform.localeName.substring(0, 2) == "pl" ?
+        randRevPosition.first.translateContentPL :
+        randRevPosition.first.content,
       positionImage: randRevPosition.first.category == "Animated" ?
         AssetImage('assets/pos_img/${randRevPosition.first.category}/${randRevPosition.first.title}.gif') :
         AssetImage('assets/pos_img/${randRevPosition.first.category}/${randRevPosition.first.title}.jpg'),

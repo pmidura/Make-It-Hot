@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import '../../models/position.dart';
@@ -52,7 +54,9 @@ class _RevealedPositionsListState extends State<RevealedPositionsList> {
                 MaterialPageRoute(
                   builder: (_) => PositionDetailsScreen(
                     positionTitle: revPositions[index].title,
-                    positionContent: revPositions[index].content,
+                    positionContent: Platform.localeName.substring(0, 2) == "pl" ?
+                      revPositions[index].translateContentPL :
+                      revPositions[index].content,
                     positionImage: revPositions[index].category == "Animated" ?
                       AssetImage('assets/pos_img/${revPositions[index].category}/${revPositions[index].title}.gif') :
                       AssetImage('assets/pos_img/${revPositions[index].category}/${revPositions[index].title}.jpg'),

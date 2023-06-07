@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:scratcher/scratcher.dart';
 
@@ -67,7 +69,9 @@ class _ScratchesGridState extends State<ScratchesGrid> {
                         MaterialPageRoute(
                           builder: (_) => PositionDetailsScreen(
                             positionTitle: widget.positions[index].title,
-                            positionContent: widget.positions[index].content,
+                            positionContent: Platform.localeName.substring(0, 2) == "pl" ?
+                              widget.positions[index].translateContentPL :
+                              widget.positions[index].content,
                             positionImage: widget.positions[index].category == "Animated" ?
                               AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.gif') :
                               AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.jpg'),
