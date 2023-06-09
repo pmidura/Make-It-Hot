@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 import '../../models/position.dart';
+import '../../providers/my_route.dart';
 import '../../screens/position_details_screen.dart';
 import '../../styles/theme.dart' as style;
 import '../gradient_progess_widget/gradient_progress.dart';
@@ -51,7 +52,7 @@ class _RevealedPositionsListState extends State<RevealedPositionsList> {
             child: ListTile(
               onTap: () => Navigator.push(
                 context,
-                MaterialPageRoute(
+                MyRoute(
                   builder: (_) => PositionDetailsScreen(
                     positionTitle: revPositions[index].title,
                     positionContent: Platform.localeName.substring(0, 2) == "pl" ?

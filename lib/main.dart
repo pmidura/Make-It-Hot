@@ -35,5 +35,13 @@ class MyApp extends StatelessWidget {
       GlobalCupertinoLocalizations.delegate,
       GlobalWidgetsLocalizations.delegate,
     ],
+    theme: ThemeData(
+      pageTransitionsTheme: const PageTransitionsTheme(
+        builders: {
+          TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+          TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+        },
+      ),
+    ),
   );
 }

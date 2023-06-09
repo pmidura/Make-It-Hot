@@ -5,6 +5,7 @@ import 'package:scratcher/scratcher.dart';
 
 import '../../models/position.dart';
 import '../../providers/db_provider.dart';
+import '../../providers/my_route.dart';
 import '../../screens/position_details_screen.dart';
 import '../../screens/random_position_screen.dart';
 
@@ -36,7 +37,7 @@ class RandomPosScratcher extends StatelessWidget {
         if (context.mounted) {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(
+            MyRoute(
               builder: (_) => PositionDetailsScreen(
                 positionTitle: randPosition.first.title,
                 positionContent: Platform.localeName.substring(0, 2) == "pl" ?

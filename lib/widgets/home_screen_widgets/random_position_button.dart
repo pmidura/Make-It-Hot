@@ -1,8 +1,8 @@
-import 'package:animations/animations.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../providers/my_route.dart';
 import '../../screens/random_position_screen.dart';
 import '../../styles/theme.dart' as style;
 
@@ -20,16 +20,18 @@ class RandomPositionButton extends StatefulWidget {
 
 class _RandomPositionButtonState extends State<RandomPositionButton> {
   @override
-  Widget build(BuildContext context) => OpenContainer(
-    closedColor: Colors.transparent,
-    closedElevation: 0,
-    middleColor: Colors.transparent,
-    openColor: Colors.transparent,
-    openElevation: 0,
-    transitionDuration: const Duration(milliseconds: 500),
-    transitionType: ContainerTransitionType.fadeThrough,
-    openBuilder: (_, __) => RandomPositionScreen(callback: widget.callback),
-    closedBuilder: (_, __) => Column(
+  Widget build(BuildContext context) => GestureDetector(
+    onTap: () => Navigator.push(
+      context,
+      MyRoute(
+        builder: (_) => Material(
+          child: RandomPositionScreen(
+            callback: widget.callback,
+          ),
+        ),
+      ),
+    ),
+    child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(

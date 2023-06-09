@@ -1,6 +1,6 @@
-import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 
+import '../../providers/my_route.dart';
 import '../../screens/selection_screen.dart';
 import '../../styles/theme.dart' as style;
 import 'category_button_counter.dart';
@@ -21,19 +21,19 @@ class CategoryButton extends StatefulWidget {
 
 class _CategoryButtonState extends State<CategoryButton> {
   @override
-  Widget build(BuildContext context) => OpenContainer(
-    closedColor: Colors.transparent,
-    closedElevation: 0,
-    middleColor: Colors.transparent,
-    openColor: Colors.transparent,
-    openElevation: 0,
-    transitionDuration: const Duration(milliseconds: 500),
-    transitionType: ContainerTransitionType.fadeThrough,
-    openBuilder: (_, __) => SelectionScreen(
-      callback: widget.callback,
-      categoryName: widget.categoryName,
+  Widget build(BuildContext context) => GestureDetector(
+    onTap: () => Navigator.push(
+      context,
+      MyRoute(
+        builder: (_) => Material(
+          child: SelectionScreen(
+            callback: widget.callback,
+            categoryName: widget.categoryName,
+          ),
+        ),
+      ),
     ),
-    closedBuilder: (_, __) => Padding(
+    child: Padding(
       padding: const EdgeInsets.only(bottom: 15.0),
       child: Container(
         padding: const EdgeInsets.all(20.0),
