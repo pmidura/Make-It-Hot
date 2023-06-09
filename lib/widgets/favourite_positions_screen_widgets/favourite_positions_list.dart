@@ -35,6 +35,7 @@ class _FavouritePositionsListState extends State<FavouritePositionsList> {
         return noFavPositions(context);
       }
       List<Position> favPositions = snapshot.data!;
+      favPositions.sort((a, b) => a.title.compareTo(b.title));
       
       return ListView.separated(
         physics: const NeverScrollableScrollPhysics(),
@@ -77,6 +78,7 @@ class _FavouritePositionsListState extends State<FavouritePositionsList> {
               title: Text(
                 favPositions[index].title,
                 style: style.blackBold16(),
+                overflow: TextOverflow.ellipsis,
               ),
               trailing: TrailingStar(
                 favPositions: favPositions,

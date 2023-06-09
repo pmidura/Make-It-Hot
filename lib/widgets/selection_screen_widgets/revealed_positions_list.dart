@@ -33,6 +33,7 @@ class _RevealedPositionsListState extends State<RevealedPositionsList> {
         return noExposedPositions(context);
       }
       List<Position> revPositions = snapshot.data!;
+      revPositions.sort((a, b) => a.title.compareTo(b.title));
       
       return ListView.separated(
         physics: const NeverScrollableScrollPhysics(),
@@ -75,6 +76,7 @@ class _RevealedPositionsListState extends State<RevealedPositionsList> {
               title: Text(
                 revPositions[index].title,
                 style: style.blackBold16(),
+                overflow: TextOverflow.ellipsis,
               ),
               trailing: FavouriteStar(
                 revPositions: revPositions,
