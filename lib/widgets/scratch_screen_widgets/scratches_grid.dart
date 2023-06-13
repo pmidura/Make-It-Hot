@@ -44,62 +44,65 @@ class _ScratchesGridState extends State<ScratchesGrid> {
           topText(context),
           customDivider(),
           Expanded(
-            child: GridView.builder(
-              padding: EdgeInsets.zero,
-              shrinkWrap: true,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-              ),
-              itemCount: widget.positions.length,
-              itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Scratcher(
-                  color: Colors.deepPurple.shade100,
-                  brushSize: 30,
-                  accuracy: ScratchAccuracy.low,
-                  threshold: 70,
-                  onThreshold: () async {
-                    await DBProvider.db.updatePosition(
-                      title: widget.positions[index].title,
-                      isRevealed: "true",
-                    );
-                    widget.callback(DBProvider.db.getNumberOfRevealedPositions().asStream());
-                    if (context.mounted) {
-                      Navigator.pushReplacement(
-                        context,
-                        MyRoute(
-                          builder: (_) => PositionDetailsScreen(
-                            positionTitle: widget.positions[index].title,
-                            positionContent: Platform.localeName.substring(0, 2) == "pl" ?
-                              widget.positions[index].translateContentPL :
-                              widget.positions[index].content,
-                            positionImage: widget.positions[index].category == "Animated" ?
-                              AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.gif') :
-                              AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.jpg'),
-                            positionCategory: widget.positions[index].category,
-                          ),
-                        ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: GridView.builder(
+                padding: EdgeInsets.zero,
+                shrinkWrap: true,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                ),
+                itemCount: widget.positions.length,
+                itemBuilder: (context, index) => Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Scratcher(
+                    color: Colors.deepPurple.shade100,
+                    brushSize: 30,
+                    accuracy: ScratchAccuracy.low,
+                    threshold: 70,
+                    onThreshold: () async {
+                      await DBProvider.db.updatePosition(
+                        title: widget.positions[index].title,
+                        isRevealed: "true",
                       );
-                    }
-                    widget.notRevealedCallback(
-                      DBProvider.db.getListOfNotRevealedPositions(
-                        categoryName: widget.categoryName,
-                      ).asStream(),
-                    );
-                    widget.revealedCallback(
-                      DBProvider.db.getListOfRevealedPositions(
-                        categoryName: widget.categoryName,
-                      ).asStream(),
-                    );
-                  },
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height,
-                    child: Image(
-                      image: widget.positions[index].category == "Animated" ?
-                        AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.gif') :
-                        AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.jpg'),
-                      fit: BoxFit.cover,
+                      widget.callback(DBProvider.db.getNumberOfRevealedPositions().asStream());
+                      if (context.mounted) {
+                        Navigator.pushReplacement(
+                          context,
+                          MyRoute(
+                            builder: (_) => PositionDetailsScreen(
+                              positionTitle: widget.positions[index].title,
+                              positionContent: Platform.localeName.substring(0, 2) == "pl" ?
+                                widget.positions[index].translateContentPL :
+                                widget.positions[index].content,
+                              positionImage: widget.positions[index].category == "Animated" ?
+                                AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.gif') :
+                                AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.jpg'),
+                              positionCategory: widget.positions[index].category,
+                            ),
+                          ),
+                        );
+                      }
+                      widget.notRevealedCallback(
+                        DBProvider.db.getListOfNotRevealedPositions(
+                          categoryName: widget.categoryName,
+                        ).asStream(),
+                      );
+                      widget.revealedCallback(
+                        DBProvider.db.getListOfRevealedPositions(
+                          categoryName: widget.categoryName,
+                        ).asStream(),
+                      );
+                    },
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height,
+                      child: Image(
+                        image: widget.positions[index].category == "Animated" ?
+                          AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.gif') :
+                          AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.jpg'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
