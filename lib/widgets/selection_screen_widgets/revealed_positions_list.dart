@@ -33,7 +33,9 @@ class _RevealedPositionsListState extends State<RevealedPositionsList> {
         return noExposedPositions(context);
       }
       List<Position> revPositions = snapshot.data!;
-      revPositions.sort((a, b) => a.title.compareTo(b.title));
+      Platform.localeName.substring(0, 2) == "pl" ?
+        revPositions.sort((a, b) => a.translateTitlePL.compareTo(b.translateTitlePL)) :
+        revPositions.sort((a, b) => a.title.compareTo(b.title));
       
       return ListView.separated(
         physics: const NeverScrollableScrollPhysics(),
@@ -55,7 +57,9 @@ class _RevealedPositionsListState extends State<RevealedPositionsList> {
                 context,
                 MyRoute(
                   builder: (_) => PositionDetailsScreen(
-                    positionTitle: revPositions[index].title,
+                    positionTitle: Platform.localeName.substring(0, 2) == "pl" ?
+                      revPositions[index].translateTitlePL :
+                      revPositions[index].title,
                     positionContent: Platform.localeName.substring(0, 2) == "pl" ?
                       revPositions[index].translateContentPL :
                       revPositions[index].content,
@@ -67,7 +71,9 @@ class _RevealedPositionsListState extends State<RevealedPositionsList> {
 
                     // for positions.json
                     positionImage: AssetImage('assets/pos_img/${revPositions[index].category}/${revPositions[index].title}.png'),
-                    positionCategory: revPositions[index].category,
+                    positionCategory: Platform.localeName.substring(0, 2) == "pl" ?
+                      revPositions[index].translateCategoryPL :
+                      revPositions[index].category,
                     positionURL: revPositions[index].url,
                   ),
                 ),
@@ -85,7 +91,9 @@ class _RevealedPositionsListState extends State<RevealedPositionsList> {
                 backgroundColor: Colors.transparent,
               ),
               title: Text(
-                revPositions[index].title,
+                Platform.localeName.substring(0, 2) == "pl" ?
+                  revPositions[index].translateTitlePL :
+                  revPositions[index].title,
                 style: style.blackBold16(),
                 overflow: TextOverflow.ellipsis,
               ),

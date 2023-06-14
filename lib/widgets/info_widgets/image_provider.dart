@@ -1,10 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../styles/theme.dart' as style;
 
-Padding imageProvider() => Padding(
+Padding imageProvider(BuildContext context) => Padding(
   padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
   child: Align(
     alignment: Alignment.bottomCenter,
@@ -12,7 +13,7 @@ Padding imageProvider() => Padding(
       text: TextSpan(
         children: [
           TextSpan(
-            text: "The images are provided by the ",
+            text: AppLocalizations.of(context)!.imageProviderText,
             style: style.blackHalfOpacity13w600(),
           ),
           TextSpan(

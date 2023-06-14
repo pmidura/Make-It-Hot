@@ -18,7 +18,9 @@ StreamBuilder<List<Position>> randomRevealedPosition() => StreamBuilder(
     }
     List<Position> randRevPosition = randRevSnapshot.data!;
     return PositionDetailsScreen(
-      positionTitle: randRevPosition.first.title,
+      positionTitle: Platform.localeName.substring(0, 2) == "pl" ?
+        randRevPosition.first.translateTitlePL :
+        randRevPosition.first.title,
       positionContent: Platform.localeName.substring(0, 2) == "pl" ?
         randRevPosition.first.translateContentPL :
         randRevPosition.first.content,
@@ -30,7 +32,9 @@ StreamBuilder<List<Position>> randomRevealedPosition() => StreamBuilder(
 
       // for positions.json
       positionImage: AssetImage('assets/pos_img/${randRevPosition.first.category}/${randRevPosition.first.title}.png'),
-      positionCategory: randRevPosition.first.category,
+      positionCategory: Platform.localeName.substring(0, 2) == "pl" ?
+        randRevPosition.first.translateCategoryPL :
+        randRevPosition.first.category,
       positionURL: randRevPosition.first.url,
     );
   },

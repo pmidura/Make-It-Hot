@@ -71,7 +71,9 @@ class _ScratchesGridState extends State<ScratchesGrid> {
                           context,
                           MyRoute(
                             builder: (_) => PositionDetailsScreen(
-                              positionTitle: widget.positions[index].title,
+                              positionTitle: Platform.localeName.substring(0, 2) == "pl" ?
+                                widget.positions[index].translateTitlePL :
+                                widget.positions[index].title,
                               positionContent: Platform.localeName.substring(0, 2) == "pl" ?
                                 widget.positions[index].translateContentPL :
                                 widget.positions[index].content,
@@ -83,7 +85,9 @@ class _ScratchesGridState extends State<ScratchesGrid> {
 
                               // for positions.json
                               positionImage: AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.png'),
-                              positionCategory: widget.positions[index].category,
+                              positionCategory: Platform.localeName.substring(0, 2) == "pl" ?
+                                widget.positions[index].translateCategoryPL :
+                                widget.positions[index].category,
                               positionURL: widget.positions[index].url,
                             ),
                           ),

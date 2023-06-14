@@ -43,9 +43,11 @@ class DBProvider {
           await db.execute("""
             CREATE TABLE IF NOT EXISTS Positions(
               title TEXT PRIMARY KEY,
+              translateTitlePL TEXT NOT NULL,
               content TEXT NOT NULL,
               translateContentPL TEXT NOT NULL,
               category TEXT NOT NULL,
+              translateCategoryPL TEXT NOT NULL,
               URL TEXT NOT NULL,
               isRevealed TEXT NOT NULL,
               isFavourite TEXT NOT NULL

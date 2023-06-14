@@ -23,5 +23,6 @@
   "discoverNewPos": "Odkryj nowe pozycje!",
   "listOfDiscovPos": "Lista odkrytych pozycji",
   "noExposedPos": "Brak odkrytych pozycji",
-  "scratchScreenInfoText": "Odkryłeś już wszystkie pozycje w tej kategorii!"
+  "scratchScreenInfoText": "Odkryłeś już wszystkie pozycje w tej kategorii!",
+  "imageProviderText": "Obrazy dostarczane są przez "
 }

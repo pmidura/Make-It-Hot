@@ -58,7 +58,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
               ],
             ),
           ),
-          imageProvider(),
+          imageProvider(context),
         ],
       ),
     );

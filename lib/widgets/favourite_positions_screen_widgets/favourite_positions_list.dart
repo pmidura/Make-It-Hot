@@ -35,7 +35,9 @@ class _FavouritePositionsListState extends State<FavouritePositionsList> {
         return noFavPositions(context);
       }
       List<Position> favPositions = snapshot.data!;
-      favPositions.sort((a, b) => a.title.compareTo(b.title));
+      Platform.localeName.substring(0, 2) == "pl" ?
+        favPositions.sort((a, b) => a.translateTitlePL.compareTo(b.translateTitlePL)) :
+        favPositions.sort((a, b) => a.title.compareTo(b.title));
       
       return ListView.separated(
         physics: const NeverScrollableScrollPhysics(),
@@ -57,7 +59,9 @@ class _FavouritePositionsListState extends State<FavouritePositionsList> {
                 context,
                 MyRoute(
                   builder: (_) => PositionDetailsScreen(
-                    positionTitle: favPositions[index].title,
+                    positionTitle: Platform.localeName.substring(0, 2) == "pl" ?
+                      favPositions[index].translateTitlePL :
+                      favPositions[index].title,
                     positionContent: Platform.localeName.substring(0, 2) == "pl" ?
                       favPositions[index].translateContentPL :
                       favPositions[index].content,
@@ -69,7 +73,9 @@ class _FavouritePositionsListState extends State<FavouritePositionsList> {
 
                     // for positions.json
                     positionImage: AssetImage('assets/pos_img/${favPositions[index].category}/${favPositions[index].title}.png'),
-                    positionCategory: favPositions[index].category,
+                    positionCategory: Platform.localeName.substring(0, 2) == "pl" ?
+                      favPositions[index].translateCategoryPL :
+                      favPositions[index].category,
                     positionURL: favPositions[index].url,
                   ),
                 ),
@@ -87,7 +93,9 @@ class _FavouritePositionsListState extends State<FavouritePositionsList> {
                 backgroundColor: Colors.transparent,
               ),
               title: Text(
-                favPositions[index].title,
+                Platform.localeName.substring(0, 2) == "pl" ?
+                  favPositions[index].translateTitlePL :
+                  favPositions[index].title,
                 style: style.blackBold16(),
                 overflow: TextOverflow.ellipsis,
               ),

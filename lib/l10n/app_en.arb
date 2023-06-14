@@ -23,5 +23,6 @@
   "discoverNewPos": "Discover new positions!",
   "listOfDiscovPos": "List of discovered positions",
   "noExposedPos": "No exposed positions",
-  "scratchScreenInfoText": "You have already discovered all the positions in this category!"
+  "scratchScreenInfoText": "You have already discovered all the positions in this category!",
+  "imageProviderText": "The images are provided by the "
 }

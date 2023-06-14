@@ -46,7 +46,7 @@ class _FavouritePositionsScreenState extends State<FavouritePositionsScreen> {
             ],
           ),
         ),
-        imageProvider(),
+        imageProvider(context),
       ],
     ),
   );

@@ -39,7 +39,9 @@ class RandomPosScratcher extends StatelessWidget {
             context,
             MyRoute(
               builder: (_) => PositionDetailsScreen(
-                positionTitle: randPosition.first.title,
+                positionTitle: Platform.localeName.substring(0, 2) == "pl" ?
+                  randPosition.first.translateTitlePL :
+                  randPosition.first.title,
                 positionContent: Platform.localeName.substring(0, 2) == "pl" ?
                   randPosition.first.translateContentPL :
                   randPosition.first.content,
@@ -51,7 +53,9 @@ class RandomPosScratcher extends StatelessWidget {
 
                 // for positions.json
                 positionImage: AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.png'),
-                positionCategory: randPosition.first.category,
+                positionCategory: Platform.localeName.substring(0, 2) == "pl" ?
+                  randPosition.first.translateCategoryPL :
+                  randPosition.first.category,
                 positionURL: randPosition.first.url,
               ),
             ),
