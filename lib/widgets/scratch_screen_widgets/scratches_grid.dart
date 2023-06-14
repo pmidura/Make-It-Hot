@@ -75,9 +75,14 @@ class _ScratchesGridState extends State<ScratchesGrid> {
                               positionContent: Platform.localeName.substring(0, 2) == "pl" ?
                                 widget.positions[index].translateContentPL :
                                 widget.positions[index].content,
-                              positionImage: widget.positions[index].category == "Animated" ?
-                                AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.gif') :
-                                AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.jpg'),
+
+                              // for positions_TEMP.json
+                              // positionImage: widget.positions[index].category == "Animated" ?
+                              //   AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.gif') :
+                              //   AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.jpg'),
+
+                              // for positions.json
+                              positionImage: AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.png'),
                               positionCategory: widget.positions[index].category,
                             ),
                           ),
@@ -98,10 +103,14 @@ class _ScratchesGridState extends State<ScratchesGrid> {
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height,
                       child: Image(
-                        image: widget.positions[index].category == "Animated" ?
-                          AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.gif') :
-                          AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.jpg'),
-                        fit: BoxFit.cover,
+                        // for positions_TEMP.json
+                        // image: widget.positions[index].category == "Animated" ?
+                        //   AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.gif') :
+                        //   AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.jpg'),
+
+                        // for positions.json
+                        image: AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.png'),
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),

@@ -61,18 +61,28 @@ class _FavouritePositionsListState extends State<FavouritePositionsList> {
                     positionContent: Platform.localeName.substring(0, 2) == "pl" ?
                       favPositions[index].translateContentPL :
                       favPositions[index].content,
-                    positionImage: favPositions[index].category == "Animated" ?
-                      AssetImage('assets/pos_img/${favPositions[index].category}/${favPositions[index].title}.gif') :
-                      AssetImage('assets/pos_img/${favPositions[index].category}/${favPositions[index].title}.jpg'),
+                    
+                    // for positions_TEMP.json
+                    // positionImage: favPositions[index].category == "Animated" ?
+                    //   AssetImage('assets/pos_img/${favPositions[index].category}/${favPositions[index].title}.gif') :
+                    //   AssetImage('assets/pos_img/${favPositions[index].category}/${favPositions[index].title}.jpg'),
+
+                    // for positions.json
+                    positionImage: AssetImage('assets/pos_img/${favPositions[index].category}/${favPositions[index].title}.png'),
                     positionCategory: favPositions[index].category,
                   ),
                 ),
               ),
               leading: CircleAvatar(
                 radius: 25.0,
-                backgroundImage: favPositions[index].category == "Animated" ?
-                  AssetImage('assets/pos_img/${favPositions[index].category}/${favPositions[index].title}.gif') :
-                  AssetImage('assets/pos_img/${favPositions[index].category}/${favPositions[index].title}.jpg'),
+
+                // for positions_TEMP.json
+                // backgroundImage: favPositions[index].category == "Animated" ?
+                //   AssetImage('assets/pos_img/${favPositions[index].category}/${favPositions[index].title}.gif') :
+                //   AssetImage('assets/pos_img/${favPositions[index].category}/${favPositions[index].title}.jpg'),
+
+                // for positions.json
+                backgroundImage: AssetImage('assets/pos_img/${favPositions[index].category}/${favPositions[index].title}.png'),
                 backgroundColor: Colors.transparent,
               ),
               title: Text(

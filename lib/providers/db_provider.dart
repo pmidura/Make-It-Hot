@@ -46,6 +46,7 @@ class DBProvider {
               content TEXT NOT NULL,
               translateContentPL TEXT NOT NULL,
               category TEXT NOT NULL,
+              URL TEXT NOT NULL,
               isRevealed TEXT NOT NULL,
               isFavourite TEXT NOT NULL
             )

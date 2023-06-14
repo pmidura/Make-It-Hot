@@ -11,6 +11,7 @@ class Position {
   final String content;
   final String translateContentPL;
   final String category;
+  final String url;
   final String isRevealed;
   final String isFavourite;
 
@@ -19,6 +20,7 @@ class Position {
     required this.content,
     required this.translateContentPL,
     required this.category,
+    required this.url,
     required this.isRevealed,
     required this.isFavourite,
   });
@@ -28,6 +30,7 @@ class Position {
     content: json["content"],
     translateContentPL: json["translateContentPL"],
     category: json["category"],
+    url: json["URL"],
     isRevealed: json["isRevealed"],
     isFavourite: json["isFavourite"],
   );
@@ -37,6 +40,7 @@ class Position {
     'content': content,
     'translateContentPL': translateContentPL,
     'category': category,
+    'URL': url,
     'isRevealed': isRevealed,
     'isFavourite': isFavourite,
   };

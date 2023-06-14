@@ -43,9 +43,14 @@ class RandomPosScratcher extends StatelessWidget {
                 positionContent: Platform.localeName.substring(0, 2) == "pl" ?
                   randPosition.first.translateContentPL :
                   randPosition.first.content,
-                positionImage: randPosition.first.category == "Animated" ?
-                  AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.gif') :
-                  AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.jpg'),
+
+                // for positions_TEMP.json
+                // positionImage: randPosition.first.category == "Animated" ?
+                //   AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.gif') :
+                //   AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.jpg'),
+
+                // for positions.json
+                positionImage: AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.png'),
                 positionCategory: randPosition.first.category,
               ),
             ),
@@ -56,10 +61,14 @@ class RandomPosScratcher extends StatelessWidget {
         width: 200.0,
         height: 200.0,
         child: Image(
-          image: randPosition.first.category == "Animated" ?
-            AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.gif') :
-            AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.jpg'),
-          fit: BoxFit.cover,
+          // for positions_TEMP.json
+          // image: randPosition.first.category == "Animated" ?
+          //   AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.gif') :
+          //   AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.jpg'),
+
+          // for positions.json
+          image: AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.png'),
+          fit: BoxFit.fill,
         ),
       ),
     );

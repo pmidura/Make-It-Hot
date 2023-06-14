@@ -13,14 +13,14 @@ Theme categoriesExpansionList({
     CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.manOnTop),
     CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.womanOnTop),
     CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.oral),
-    CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.threesome),
-    CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.foursome),
-    CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.spooning),
+    // CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.threesome),
+    // CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.foursome),
+    // CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.spooning),
     CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.acrobatic),
     CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.kneeOrStand),
-    CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.anal),
-    CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.animated),
-    CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.largPeople),
+    // CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.anal),
+    // CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.animated),
+    // CategoryButton(callback: callback, categoryName: AppLocalizations.of(context)!.largPeople),
   ];
 
   categoriesBtns.sort((a, b) => a.categoryName.compareTo(b.categoryName));

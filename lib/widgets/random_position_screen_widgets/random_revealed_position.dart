@@ -22,9 +22,14 @@ StreamBuilder<List<Position>> randomRevealedPosition() => StreamBuilder(
       positionContent: Platform.localeName.substring(0, 2) == "pl" ?
         randRevPosition.first.translateContentPL :
         randRevPosition.first.content,
-      positionImage: randRevPosition.first.category == "Animated" ?
-        AssetImage('assets/pos_img/${randRevPosition.first.category}/${randRevPosition.first.title}.gif') :
-        AssetImage('assets/pos_img/${randRevPosition.first.category}/${randRevPosition.first.title}.jpg'),
+
+      // for positions_TEMP.json
+      // positionImage: randRevPosition.first.category == "Animated" ?
+      //   AssetImage('assets/pos_img/${randRevPosition.first.category}/${randRevPosition.first.title}.gif') :
+      //   AssetImage('assets/pos_img/${randRevPosition.first.category}/${randRevPosition.first.title}.jpg'),
+
+      // for positions.json
+      positionImage: AssetImage('assets/pos_img/${randRevPosition.first.category}/${randRevPosition.first.title}.png'),
       positionCategory: randRevPosition.first.category,
     );
   },
