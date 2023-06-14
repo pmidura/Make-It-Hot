@@ -9,6 +9,7 @@ class PositionDetailsScreen extends StatelessWidget {
   final String positionContent;
   final AssetImage positionImage;
   final String positionCategory;
+  final String positionURL;
 
   const PositionDetailsScreen({
     super.key,
@@ -16,6 +17,7 @@ class PositionDetailsScreen extends StatelessWidget {
     required this.positionContent,
     required this.positionImage,
     required this.positionCategory,
+    required this.positionURL,
   });
 
   @override
@@ -36,6 +38,7 @@ class PositionDetailsScreen extends StatelessWidget {
                   positionTitle: positionTitle,
                   positionCategory: positionCategory,
                   positionContent: positionContent,
+                  positionURL: positionURL,
                 ),
               ],
             ),

@@ -5,6 +5,7 @@ import '../providers/db_provider.dart';
 import '../styles/theme.dart' as style;
 import '../widgets/favourite_positions_screen_widgets/favourite_list_title.dart';
 import '../widgets/favourite_positions_screen_widgets/favourite_positions_list.dart';
+import '../widgets/info_widgets/image_provider.dart';
 
 class FavouritePositionsScreen extends StatefulWidget {
   const FavouritePositionsScreen({
@@ -45,6 +46,7 @@ class _FavouritePositionsScreenState extends State<FavouritePositionsScreen> {
             ],
           ),
         ),
+        imageProvider(),
       ],
     ),
   );

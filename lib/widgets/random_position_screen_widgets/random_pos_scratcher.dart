@@ -52,6 +52,7 @@ class RandomPosScratcher extends StatelessWidget {
                 // for positions.json
                 positionImage: AssetImage('assets/pos_img/${randPosition.first.category}/${randPosition.first.title}.png'),
                 positionCategory: randPosition.first.category,
+                positionURL: randPosition.first.url,
               ),
             ),
           );

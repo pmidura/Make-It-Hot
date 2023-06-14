@@ -4,7 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../styles/theme.dart' as style;
 
 Padding noExposedPositions(BuildContext context) => Padding(
-  padding: const EdgeInsets.only(top: 20.0),
+  padding: const EdgeInsets.only(top: 20.0, bottom: 25.0),
   child: Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [

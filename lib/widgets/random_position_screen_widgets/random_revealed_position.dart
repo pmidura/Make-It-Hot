@@ -31,6 +31,7 @@ StreamBuilder<List<Position>> randomRevealedPosition() => StreamBuilder(
       // for positions.json
       positionImage: AssetImage('assets/pos_img/${randRevPosition.first.category}/${randRevPosition.first.title}.png'),
       positionCategory: randRevPosition.first.category,
+      positionURL: randRevPosition.first.url,
     );
   },
 );

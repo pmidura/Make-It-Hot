@@ -79,3 +79,10 @@ TextStyle blackBold14w400() => TextStyle(
   color: Colors.black,
   fontFamily: GoogleFonts.courgette().fontFamily,
 );
+
+TextStyle urlStyle() => TextStyle(
+  fontSize: 13.0,
+  fontWeight: FontWeight.w600,
+  color: const Color.fromARGB(255, 100, 0, 255).withOpacity(0.5),
+  fontFamily: GoogleFonts.courgette().fontFamily,
+);

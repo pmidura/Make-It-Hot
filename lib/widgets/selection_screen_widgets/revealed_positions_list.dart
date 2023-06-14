@@ -68,6 +68,7 @@ class _RevealedPositionsListState extends State<RevealedPositionsList> {
                     // for positions.json
                     positionImage: AssetImage('assets/pos_img/${revPositions[index].category}/${revPositions[index].title}.png'),
                     positionCategory: revPositions[index].category,
+                    positionURL: revPositions[index].url,
                   ),
                 ),
               ),

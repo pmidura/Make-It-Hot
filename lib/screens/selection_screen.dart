@@ -4,6 +4,7 @@ import '../models/position.dart';
 import '../providers/db_provider.dart';
 import '../styles/theme.dart' as style;
 import '../widgets/selection_screen_widgets/discover_new_positions_btn.dart';
+import '../widgets/info_widgets/image_provider.dart';
 import '../widgets/selection_screen_widgets/revealed_list_title.dart';
 import '../widgets/selection_screen_widgets/revealed_positions_list.dart';
 
@@ -57,6 +58,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
               ],
             ),
           ),
+          imageProvider(),
         ],
       ),
     );

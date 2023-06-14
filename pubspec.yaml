@@ -26,6 +26,7 @@ dependencies:
   shimmer: ^2.0.0
   sqflite: ^2.2.8+2
   transparent_image: ^2.0.1
+  url_launcher: ^6.1.11
 
 dev_dependencies:
   flutter_lints: ^2.0.0

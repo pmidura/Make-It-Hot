@@ -70,6 +70,7 @@ class _FavouritePositionsListState extends State<FavouritePositionsList> {
                     // for positions.json
                     positionImage: AssetImage('assets/pos_img/${favPositions[index].category}/${favPositions[index].title}.png'),
                     positionCategory: favPositions[index].category,
+                    positionURL: favPositions[index].url,
                   ),
                 ),
               ),

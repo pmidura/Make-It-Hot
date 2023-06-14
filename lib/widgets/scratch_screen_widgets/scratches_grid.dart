@@ -84,6 +84,7 @@ class _ScratchesGridState extends State<ScratchesGrid> {
                               // for positions.json
                               positionImage: AssetImage('assets/pos_img/${widget.positions[index].category}/${widget.positions[index].title}.png'),
                               positionCategory: widget.positions[index].category,
+                              positionURL: widget.positions[index].url,
                             ),
                           ),
                         );
