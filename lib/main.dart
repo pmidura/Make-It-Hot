@@ -10,6 +10,9 @@ import 'screens/splash_screen.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // final initFuture = MobileAds.instance.initialize();
+  // final adState = AdState(initFuture);
+
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -18,6 +21,12 @@ Future<void> main() async {
   
   await PositionsJSONProvider().addJSONDataToDB();
 
+  // runApp(
+  //   Provider.value(
+  //     value: adState,
+  //     builder: (context, child) => const MyApp(),
+  //   ),
+  // );
   runApp(const MyApp());
 }
 

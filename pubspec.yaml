@@ -16,12 +16,14 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   google_fonts: ^4.0.4
+  # google_mobile_ads: ^3.0.0
   gradient_progress_indicator: ^1.0.0+5
   intl: ^0.17.0
   multiple_stream_builder: ^3.0.2
   path: ^1.8.2
   path_provider: ^2.0.15
   percent_indicator: ^4.2.3
+  provider: ^6.0.5
   scratcher: ^2.3.0
   shimmer: ^2.0.0
   sqflite: ^2.2.8+2
